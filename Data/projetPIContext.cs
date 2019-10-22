@@ -17,6 +17,7 @@ namespace Data
         }
         public DbSet<Produit> Produits { get; set; }
         public DbSet<Categorie> Categories { get; set; }
+        public DbSet<Boutique> Boutiques { get; set; }
 
     }
 }

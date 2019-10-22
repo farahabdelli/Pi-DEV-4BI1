@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Domaine
 {
-   public class Boutique
+    public class Boutique
     {
         [Key]
         public int BoutiqueId { get; set; }
@@ -28,7 +28,8 @@ namespace Domaine
         [DataType(DataType.PhoneNumber)]
         public int tel { get; set; }
         public string type { get; set; }
-        public string service { get; set; }
+        public string heure_ouv { get; set; }
+        public string heure_ferm { get; set; }
     }
 }
 

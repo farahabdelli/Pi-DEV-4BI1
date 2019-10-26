@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Services
 {
-    public class ServiceProduit: Service<Produit>, IServiceProduit
+    public class ServiceProduit: Service<Product>, IServiceProduit
     {
         private static DatabaseFactory dbf = new DatabaseFactory();
 
@@ -21,21 +21,21 @@ namespace Services
 
 
         }
-        public IEnumerable<Produit> GetProductsbyCategoryname(String catname)
+        public IEnumerable<Product> GetProductsbyCategoryname(String catname)
         {//lambda
          // return  GetMany(p => p.Category.Name.Equals(catname));
          //linq
-            IEnumerable<Produit> req = from p in GetMany()
+            IEnumerable<Product> req = from p in GetMany()
                                        where p.Categorie.Nom == catname
                                        select p;
             return req;
 
 
         }
-        public IEnumerable<Produit> GetMostExpensiveProduct()
+        public IEnumerable<Product> GetMostExpensiveProduct()
         {
             //return GetMany().OrderByDescending(p => p.Price).Take(5);
-            IEnumerable<Produit> req = from p in GetMany()
+            IEnumerable<Product> req = from p in GetMany()
                                        orderby p.Prix descending
                                        select p;
             return req.Take(5);

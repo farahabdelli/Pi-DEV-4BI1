@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Domaine
 {
-    public class Boutique
+    public class Store
     {
         [Key]
         public int BoutiqueId { get; set; }

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Domaine
 {
-    public class Produit
+    public class Product
     {
         [Key]
         public int ProduitId { get; set; }
@@ -24,7 +24,7 @@ namespace Domaine
         public int Quantite { get; set; }
         public string Image { get; set; }
         [ForeignKey("CategorieId")]
-        public virtual Categorie Categorie { get; set; }
+        public virtual Category Categorie { get; set; }
         // [ForeignKey("Categorie")]
         public int? CategorieId { get; set; }
       

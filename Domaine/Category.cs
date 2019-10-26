@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace Domaine
 {
-    public class Categorie
+    public class Category
     {
         [Key]
         public int CategorieId { get; set; }
         public string Nom { get; set; }
-        public virtual ICollection<Produit> Produits { get; set; }
+        public virtual ICollection<Product> Produits { get; set; }
 
     }
 }

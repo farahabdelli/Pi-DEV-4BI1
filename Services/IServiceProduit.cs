@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Services
 {
-    interface IServiceProduit : IService<Produit>
+    interface IServiceProduit : IService<Product>
     {
     }
 }

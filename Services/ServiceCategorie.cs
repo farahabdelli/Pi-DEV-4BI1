@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Services
 {
-   public class ServiceCategorie: Service<Categorie>, IServiceCategorie
+   public class ServiceCategorie: Service<Category>, IServiceCategorie
     {
         private static DatabaseFactory dbf = new DatabaseFactory();
 

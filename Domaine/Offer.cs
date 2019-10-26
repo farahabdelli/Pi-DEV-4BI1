@@ -20,7 +20,7 @@ namespace Domaine
         public DateTime end_date { get; set; }
 
         [ForeignKey("ProduitId")]
-        public virtual Produit Produit { get; set; }
+        public virtual Product Produit { get; set; }
         public int? ProduitId { get; set; }
         public virtual ICollection<Promotion> Promotions { get; set; }
 

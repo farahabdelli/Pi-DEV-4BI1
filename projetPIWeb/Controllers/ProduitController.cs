@@ -17,7 +17,7 @@ namespace projetPIWeb.Controllers
         // GET: Product
         public ActionResult Index()
         {
-            List<Produit> listproduit = Session["Produits"] as List<Produit>;
+            List<Product> listproduit = Session["Produits"] as List<Product>;
             var produits = sp.GetMany();
             return View(produits);
         }
@@ -25,7 +25,7 @@ namespace projetPIWeb.Controllers
         // GET: Product
         public ActionResult Index2()
         {
-            List<Produit> listproduit = Session["Produits"] as List<Produit>;
+            List<Product> listproduit = Session["Produits"] as List<Product>;
             var produits = sp.GetMany();
             return View(produits);
         }
@@ -61,7 +61,7 @@ namespace projetPIWeb.Controllers
         {
             pm.Image = Image.FileName;
 
-            Produit p = new Produit()
+            Product p = new Product()
             {
              
                 Description = pm.Description,

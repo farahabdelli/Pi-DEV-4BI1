@@ -18,6 +18,6 @@ namespace Domaine
         public int quantite_sortante { get; set; }
         [Range(0, int.MaxValue)]
         public int quantite { get; set; }
-        public virtual ICollection<Boutique> Boutiques { get; set; }
+        public virtual ICollection<Store> Boutiques { get; set; }
     }
 }

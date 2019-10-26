@@ -17,7 +17,7 @@ namespace Domaine
         public int NbLikes { get; set; }
         public int NbDislikes { get; set; }
         [ForeignKey("QuestionId")]
-        public virtual Categorie Categorie { get; set; }
+        public virtual Category Categorie { get; set; }
         // [ForeignKey("Categorie")]
         public int? QuestionId { get; set; }
     }

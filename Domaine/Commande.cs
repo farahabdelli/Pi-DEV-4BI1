@@ -14,5 +14,7 @@ namespace Domaine
         public double prix { get; set; }
         public int nbrcom { get; set; }
         public IEnumerable<CommandeLigne> commandeligne { get; set; }
+
+        //commentaire
     }
 }

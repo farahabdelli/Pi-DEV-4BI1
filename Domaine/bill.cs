@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Domaine
 {
-    public class bill
+    public class Bill
     {[Key]
         public int idbill { get; set; }
         [DataType(DataType.Date)]

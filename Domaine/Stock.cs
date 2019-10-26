@@ -7,10 +7,11 @@ using System.Threading.Tasks;
 
 namespace Domaine
 {
-    class Stock
+    public class Stock
     {
         [Key]
         public int idStock { get; set; }
+
         [Range(0, int.MaxValue)]
         public int quantite_entrante { get; set; }
         [Range(0, int.MaxValue)]

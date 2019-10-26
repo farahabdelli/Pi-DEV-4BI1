@@ -24,5 +24,7 @@ namespace Domaine
         public int? ProduitId { get; set; }
         public virtual ICollection<Promotion> Promotions { get; set; }
 
+       // public int MyProperty { get; set; }
+
     }
 }

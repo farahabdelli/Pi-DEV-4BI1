@@ -29,5 +29,7 @@ namespace projetPIWeb.Models
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<Domaine.Store> Stores { get; set; }
     }
 }

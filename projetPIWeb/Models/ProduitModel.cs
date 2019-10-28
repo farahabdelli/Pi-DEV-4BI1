@@ -27,5 +27,6 @@ namespace projetPIWeb.Models
 
         public IEnumerable<SelectListItem> Categories { get; set; }
 
+
     }
 }

@@ -50,9 +50,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Migrations\201910261035517_migration.cs" />
-    <Compile Include="Migrations\201910261035517_migration.Designer.cs">
-      <DependentUpon>201910261035517_migration.cs</DependentUpon>
+    <Compile Include="Migrations\201910281603425_ahmed.cs" />
+    <Compile Include="Migrations\201910281603425_ahmed.Designer.cs">
+      <DependentUpon>201910281603425_ahmed.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910281736162_ahmed1.cs" />
+    <Compile Include="Migrations\201910281736162_ahmed1.Designer.cs">
+      <DependentUpon>201910281736162_ahmed1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910281742477_ahmed2.cs" />
+    <Compile Include="Migrations\201910281742477_ahmed2.Designer.cs">
+      <DependentUpon>201910281742477_ahmed2.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="projetPIContext.cs" />
@@ -80,8 +88,14 @@
     <Folder Include="MyConventions\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201910261035517_migration.resx">
-      <DependentUpon>201910261035517_migration.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201910281603425_ahmed.resx">
+      <DependentUpon>201910281603425_ahmed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910281736162_ahmed1.resx">
+      <DependentUpon>201910281736162_ahmed1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910281742477_ahmed2.resx">
+      <DependentUpon>201910281742477_ahmed2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

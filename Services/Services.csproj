@@ -50,12 +50,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IServiceBill.cs" />
     <Compile Include="IServiceBoutique.cs" />
     <Compile Include="IServiceCategorie.cs" />
+    <Compile Include="IServiceCommande.cs" />
+    <Compile Include="IServiceCommandeLigne.cs" />
     <Compile Include="IServiceProduit.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServiceBills.cs" />
     <Compile Include="ServiceCategorie.cs" />
     <Compile Include="ServiceBoutique.cs" />
+    <Compile Include="ServiceCommande.cs" />
+    <Compile Include="ServiceCommandeLigne.cs" />
     <Compile Include="ServiceProduit.cs" />
   </ItemGroup>
   <ItemGroup>

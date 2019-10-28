@@ -15,6 +15,6 @@ namespace Domaine
         public int nbrcom { get; set; }
         public IEnumerable<CommandeLigne> commandeligne { get; set; }
 
-        //commentaire
+       
     }
 }

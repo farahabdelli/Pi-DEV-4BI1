@@ -3,7 +3,7 @@ namespace Data.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class migration : DbMigration
+    public partial class ahmed : DbMigration
     {
         public override void Up()
         {
@@ -33,7 +33,7 @@ namespace Data.Migrations
                 .PrimaryKey(t => t.idcom);
             
             CreateTable(
-                "dbo.Boutiques",
+                "dbo.Stores",
                 c => new
                     {
                         BoutiqueId = c.Int(nullable: false, identity: true),
@@ -61,7 +61,7 @@ namespace Data.Migrations
                 .PrimaryKey(t => t.CategorieId);
             
             CreateTable(
-                "dbo.Produits",
+                "dbo.Products",
                 c => new
                     {
                         ProduitId = c.Int(nullable: false, identity: true),
@@ -104,7 +104,7 @@ namespace Data.Migrations
                         ProduitId = c.Int(),
                     })
                 .PrimaryKey(t => t.OfferId)
-                .ForeignKey("dbo.Produits", t => t.ProduitId)
+                .ForeignKey("dbo.Products", t => t.ProduitId)
                 .Index(t => t.ProduitId);
             
             CreateTable(
@@ -198,14 +198,14 @@ namespace Data.Migrations
         
         public override void Down()
         {
-            DropForeignKey("dbo.Boutiques", "Stock_idStock", "dbo.Stocks");
+            DropForeignKey("dbo.Stores", "Stock_idStock", "dbo.Stocks");
             DropForeignKey("dbo.Reponses", "QuestionId", "dbo.Categories");
             DropForeignKey("dbo.Promotions", "PackId", "dbo.Packs");
             DropForeignKey("dbo.Packs", "OfferId", "dbo.Offers");
             DropForeignKey("dbo.Promotions", "OfferId", "dbo.Offers");
-            DropForeignKey("dbo.Offers", "ProduitId", "dbo.Produits");
+            DropForeignKey("dbo.Offers", "ProduitId", "dbo.Products");
             DropForeignKey("dbo.CommandeLignes", "commande_idcom", "dbo.Commandes");
-            DropForeignKey("dbo.Produits", "CategorieId", "dbo.Categories");
+            DropForeignKey("dbo.Products", "CategorieId", "dbo.Categories");
             DropForeignKey("dbo.Bills", "commande_idcom", "dbo.Commandes");
             DropIndex("dbo.Reponses", new[] { "QuestionId" });
             DropIndex("dbo.Packs", new[] { "OfferId" });
@@ -213,8 +213,8 @@ namespace Data.Migrations
             DropIndex("dbo.Promotions", new[] { "OfferId" });
             DropIndex("dbo.Offers", new[] { "ProduitId" });
             DropIndex("dbo.CommandeLignes", new[] { "commande_idcom" });
-            DropIndex("dbo.Produits", new[] { "CategorieId" });
-            DropIndex("dbo.Boutiques", new[] { "Stock_idStock" });
+            DropIndex("dbo.Products", new[] { "CategorieId" });
+            DropIndex("dbo.Stores", new[] { "Stock_idStock" });
             DropIndex("dbo.Bills", new[] { "commande_idcom" });
             DropTable("dbo.Stocks");
             DropTable("dbo.Reponses");
@@ -224,9 +224,9 @@ namespace Data.Migrations
             DropTable("dbo.Promotions");
             DropTable("dbo.Offers");
             DropTable("dbo.CommandeLignes");
-            DropTable("dbo.Produits");
+            DropTable("dbo.Products");
             DropTable("dbo.Categories");
-            DropTable("dbo.Boutiques");
+            DropTable("dbo.Stores");
             DropTable("dbo.Commandes");
             DropTable("dbo.Bills");
         }

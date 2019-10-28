@@ -16,13 +16,16 @@ namespace Domaine
         public int quantité { get; set; }
         [DataType(DataType.Currency)]
         public double montantotal { get; set; }
-      //  [Key]
-        //[Column(Order = 1)]
-        // public produit produit { get; set; }
-       // [Key]
+       [Key]
+       [Column(Order = 1)]
+       [ForeignKey("ProduitId")]
+        public virtual Product produit { get; set; }
+        public int? ProduitId { get; set; }
+        // [Key]
         //[Column(Order = 2)]
         //  public User User { get; set; }
-        public Commande commande { get; set; }
-        public int commandeFK { get; set; }
+        [ForeignKey("idcom")]
+        public virtual Commande commande { get; set; }
+        public int? idcom { get; set; }
     }
 }

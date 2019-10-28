@@ -62,6 +62,14 @@
     <Compile Include="Migrations\201910281742477_ahmed2.Designer.cs">
       <DependentUpon>201910281742477_ahmed2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201910261920495_migration2.cs" />
+    <Compile Include="Migrations\201910261920495_migration2.Designer.cs">
+      <DependentUpon>201910261920495_migration2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910271931566_store.cs" />
+    <Compile Include="Migrations\201910271931566_store.Designer.cs">
+      <DependentUpon>201910271931566_store.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="projetPIContext.cs" />
     <Compile Include="Infrastructure\DatabaseFactory.cs" />
@@ -96,6 +104,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201910281742477_ahmed2.resx">
       <DependentUpon>201910281742477_ahmed2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910261920495_migration2.resx">
+      <DependentUpon>201910261920495_migration2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910271931566_store.resx">
+      <DependentUpon>201910271931566_store.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

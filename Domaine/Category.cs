@@ -10,11 +10,9 @@ namespace Domaine
     public class Category
     {
         [Key]
-        public int CategorieId { get; set; }
+        public int CategorieId { get; set; } 
         public string Nom { get; set; }
         public virtual ICollection<Product> Produits { get; set; }
-
-        //propljnjl  fhxghdgceh
 
     }
 }

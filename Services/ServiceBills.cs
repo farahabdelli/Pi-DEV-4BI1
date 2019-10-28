@@ -13,6 +13,7 @@ namespace Services
     {
         public ServiceBills(IUnitOfWork utwk) : base(utwk)
         {
+
         }
     }
 }

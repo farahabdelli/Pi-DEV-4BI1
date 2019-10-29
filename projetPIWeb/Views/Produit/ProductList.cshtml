@@ -1,0 +1,91 @@
+﻿@model IEnumerable<Domaine.Product>
+
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_CustomLayoutBackend2.cshtml";
+}
+
+<div style="text-align:right">
+    <input type="button" value="Create new Product" onclick="location.href='@Url.Action("CreateProduct", "Produit")'" class="btn btn-primary" />
+</div>
+<br /><br />
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nom)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Image)
+        </th>
+        <th>
+
+            @Html.DisplayNameFor(model => model.Categorie.Nom)
+        </th>
+
+        <th>
+
+            @Html.DisplayNameFor(model => model.Brand.Nom)
+        </th>
+
+        <th>
+
+            @Html.DisplayNameFor(model => model.Network.Nom)
+        </th>
+
+
+        <th>
+            @Html.DisplayNameFor(model => model.Prix)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Quantite)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nom)
+            </td>
+            <td>
+                @{string path = "~/Content/Upload/" + item.Image;}
+
+                <img src="@Url.Content(path)" width="50" height="50" />
+
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Categorie.Nom)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Brand.Nom)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Network.Nom)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Prix)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Quantite)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.ProduitId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.ProduitId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.ProduitId })
+            </td>
+        </tr>
+                    }
+
+</table>

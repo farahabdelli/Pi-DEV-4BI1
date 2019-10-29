@@ -31,6 +31,8 @@ namespace projetPIWeb
             #region TemplateBack Design
             bundles.Add(new ScriptBundle("~/template/Backend/css").Include(
                         "~/Content/Backend/css/all.min.css",
+                        "~/Content/Backend/css/font-awesome.css",
+                           "~/Content/Backend/css/all.css",
                          "~/Content/Backend/css/sb-admin-2.min.css"));
 
 
@@ -38,6 +40,9 @@ namespace projetPIWeb
                         "~/Scripts/jquery.min.js",
                         "~/Scripts/bootstrap.bundle.min.js",
                         "~/Scripts/jquery.easing.min.js",
+                        "~/Scripts/jquery.fontawesome.min.js",
+                        "~/Scripts/jquery.fontawesome.js",
+                        "~/Scripts/jquery.all.mon.js",
                         "~/Scripts/sb-admin-2.min.js"));
 
 
@@ -46,7 +51,9 @@ namespace projetPIWeb
             #region TemplateFront Design
             bundles.Add(new ScriptBundle("~/template/Frontend/css").Include(
                         "~/Content/Frontend/css/bootstrap.min.css",
+                        "~/Content/Frontend/css/all.css",
                          "~/Content/Frontend/css/font-awesome.min.css",
+                         "~/Content/Frontend/css/font-awesome.css",
                          "~/Content/Frontend/css/material-design-iconic-font.min.css",
                          "~/Content/Frontend/css/icon-font.min.css",
                          "~/Content/Frontend/css/animate.css",

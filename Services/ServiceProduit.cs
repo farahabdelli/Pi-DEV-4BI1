@@ -21,17 +21,7 @@ namespace Services
 
 
         }
-        public IEnumerable<Product> GetProductsbyCategoryname(String catname)
-        {//lambda
-         // return  GetMany(p => p.Category.Name.Equals(catname));
-         //linq
-            IEnumerable<Product> req = from p in GetMany()
-                                       where p.Categorie.Nom == catname
-                                       select p;
-            return req;
-
-
-        }
+      
         public IEnumerable<Product> GetMostExpensiveProduct()
         {
             //return GetMany().OrderByDescending(p => p.Price).Take(5);

@@ -8,7 +8,8 @@
     <meta name="author" content="">
     <title>Operators</title>
     <!-- Custom fonts for this template-->
-   
+    
+    <link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
     <!-- Custom styles for this template-->
     <!-- Styles -->
@@ -25,8 +26,9 @@
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
                 </div>
-                <div class="sidebar-brand-text mx-3">Operators administration <sup></sup></div>
+                <div class="sidebar-brand-text mx-3" >Operators administration</div>
             </a>
+            
             <!-- Divider -->
             <hr class="sidebar-divider my-0">
             <!-- Nav Item - Dashboard -->
@@ -46,20 +48,15 @@
 
                 <li class="nav-item">
             <a href=" @Url.Action("ProductList", "Produit")" class="nav-link collapsed" >
-                <i class="fas fa-fw fa-cog"></i>
+                <i class="fas fa-list"></i>
                     <span>Products</span></a></li>
                
             
-            <li class="nav-item">
-                <a href=" @Url.Action("CategoryList2", "Categorie")" class="nav-link collapsed">
-                    <i class="fas fa-fw fa-cog"></i>
-                    <span>Categories</span>
-                </a>
-            </li>
+           
             <!-- Nav Item - Utilities Collapse Menu -->
             <li class="nav-item">
-                <a href=" @Url.Action("StoreList", "Store")" class="nav-link collapsed">
-                    <i class="fas fa-fw fa-cog"></i>
+                <a href=" @Url.Action("Index", "Stores")" class="nav-link collapsed">
+                    <i class="fa fa-calculator"></i>
                     <span>Stores</span>
                 </a>
             </li>
@@ -96,8 +93,7 @@
 
 
 
-
-
+           
             <!-- Divider -->
             <hr class="sidebar-divider">
             <!-- Heading -->

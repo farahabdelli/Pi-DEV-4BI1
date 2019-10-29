@@ -51,11 +51,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IServiceBoutique.cs" />
-    <Compile Include="IServiceCategorie.cs" />
+    <Compile Include="IServiceNetwork.cs" />
+    <Compile Include="IServiceBrand.cs" />
+    <Compile Include="IServiceCategory.cs" />
     <Compile Include="IServiceProduit.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ServiceCategorie.cs" />
     <Compile Include="ServiceBoutique.cs" />
+    <Compile Include="ServiceBrand.cs" />
+    <Compile Include="ServiceCategory.cs" />
+    <Compile Include="ServiceNetwork.cs" />
     <Compile Include="ServiceProduit.cs" />
   </ItemGroup>
   <ItemGroup>

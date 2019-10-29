@@ -31,5 +31,11 @@ namespace projetPIWeb.Models
         }
 
         public System.Data.Entity.DbSet<Domaine.Store> Stores { get; set; }
+
+        public System.Data.Entity.DbSet<Domaine.Product> Products { get; set; }
+
+        public System.Data.Entity.DbSet<Domaine.Category> Categories { get; set; }
+
+        public System.Data.Entity.DbSet<projetPIWeb.Models.ProduitModel> ProduitModels { get; set; }
     }
 }

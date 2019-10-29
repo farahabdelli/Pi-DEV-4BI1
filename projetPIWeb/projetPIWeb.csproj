@@ -50,6 +50,14 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -169,18 +177,19 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\StoreController.cs" />
-    <Compile Include="Controllers\CategorieController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ProduitController.cs" />
+    <Compile Include="Controllers\StoresController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201910291540026_model.cs" />
+    <Compile Include="Migrations\201910291540026_model.Designer.cs">
+      <DependentUpon>201910291540026_model.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\StoreModel.cs" />
-    <Compile Include="Models\CategoryModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\ProduitModel.cs" />
@@ -188,17 +197,22 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Backend\css\all.css" />
+    <Content Include="Content\Backend\css\font-awesome.min.css" />
+    <Content Include="Content\Backend\css\fontawesome.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Backend\css\all.min.css" />
     <Content Include="Content\Backend\css\sb-admin-2.css" />
     <Content Include="Content\Backend\css\sb-admin-2.min.css" />
     <Content Include="Content\Backend\img\undraw_posting_photo.svg" />
+    <Content Include="Content\Frontend\css\all.css" />
     <Content Include="Content\Frontend\css\animate.css" />
     <Content Include="Content\Frontend\css\animsition.min.css" />
     <Content Include="Content\Frontend\css\bootstrap.min.css" />
     <Content Include="Content\Frontend\css\daterangepicker.css" />
     <Content Include="Content\Frontend\css\font-awesome.min.css" />
+    <Content Include="Content\Frontend\css\fontawesome.css" />
     <Content Include="Content\Frontend\css\hamburgers.min.css" />
     <Content Include="Content\Frontend\css\magnific-popup.css" />
     <Content Include="Content\Frontend\css\main.css" />
@@ -207,6 +221,35 @@
     <Content Include="Content\Frontend\css\select2.min.css" />
     <Content Include="Content\Frontend\css\slick.css" />
     <Content Include="Content\Frontend\css\util.css" />
+    <Content Include="Content\Frontend\images\about-01.jpg" />
+    <Content Include="Content\Frontend\images\about-02.jpg" />
+    <Content Include="Content\Frontend\images\avatar-01.jpg" />
+    <Content Include="Content\Frontend\images\banner-01.jpg" />
+    <Content Include="Content\Frontend\images\banner-02.jpg" />
+    <Content Include="Content\Frontend\images\banner-03.jpg" />
+    <Content Include="Content\Frontend\images\banner-04.jpg" />
+    <Content Include="Content\Frontend\images\banner-05.jpg" />
+    <Content Include="Content\Frontend\images\banner-06.jpg" />
+    <Content Include="Content\Frontend\images\banner-07.jpg" />
+    <Content Include="Content\Frontend\images\banner-08.jpg" />
+    <Content Include="Content\Frontend\images\banner-09.jpg" />
+    <Content Include="Content\Frontend\images\bg-01.jpg" />
+    <Content Include="Content\Frontend\images\bg-02.jpg" />
+    <Content Include="Content\Frontend\images\blog-01.jpg" />
+    <Content Include="Content\Frontend\images\blog-02.jpg" />
+    <Content Include="Content\Frontend\images\blog-03.jpg" />
+    <Content Include="Content\Frontend\images\blog-04.jpg" />
+    <Content Include="Content\Frontend\images\blog-05.jpg" />
+    <Content Include="Content\Frontend\images\blog-06.jpg" />
+    <Content Include="Content\Frontend\images\gallery-01.jpg" />
+    <Content Include="Content\Frontend\images\gallery-02.jpg" />
+    <Content Include="Content\Frontend\images\gallery-03.jpg" />
+    <Content Include="Content\Frontend\images\gallery-04.jpg" />
+    <Content Include="Content\Frontend\images\gallery-05.jpg" />
+    <Content Include="Content\Frontend\images\gallery-06.jpg" />
+    <Content Include="Content\Frontend\images\gallery-07.jpg" />
+    <Content Include="Content\Frontend\images\gallery-08.jpg" />
+    <Content Include="Content\Frontend\images\gallery-09.jpg" />
     <Content Include="Content\Frontend\images\icons\favicon.png" />
     <Content Include="Content\Frontend\images\icons\icon-close.png" />
     <Content Include="Content\Frontend\images\icons\icon-close2.png" />
@@ -223,8 +266,49 @@
     <Content Include="Content\Frontend\images\icons\logo-01.png" />
     <Content Include="Content\Frontend\images\icons\logo-02.png" />
     <Content Include="Content\Frontend\images\icons\pin.png" />
+    <Content Include="Content\Frontend\images\img1.jpg" />
+    <Content Include="Content\Frontend\images\item-cart-01.jpg" />
+    <Content Include="Content\Frontend\images\item-cart-02.jpg" />
+    <Content Include="Content\Frontend\images\item-cart-03.jpg" />
+    <Content Include="Content\Frontend\images\item-cart-04.jpg" />
+    <Content Include="Content\Frontend\images\item-cart-05.jpg" />
+    <Content Include="Content\Frontend\images\product-01.jpg" />
+    <Content Include="Content\Frontend\images\product-02.jpg" />
+    <Content Include="Content\Frontend\images\product-03.jpg" />
+    <Content Include="Content\Frontend\images\product-04.jpg" />
+    <Content Include="Content\Frontend\images\product-05.jpg" />
+    <Content Include="Content\Frontend\images\product-06.jpg" />
+    <Content Include="Content\Frontend\images\product-07.jpg" />
+    <Content Include="Content\Frontend\images\product-08.jpg" />
+    <Content Include="Content\Frontend\images\product-09.jpg" />
+    <Content Include="Content\Frontend\images\product-10.jpg" />
+    <Content Include="Content\Frontend\images\product-11.jpg" />
+    <Content Include="Content\Frontend\images\product-12.jpg" />
+    <Content Include="Content\Frontend\images\product-13.jpg" />
+    <Content Include="Content\Frontend\images\product-14.jpg" />
+    <Content Include="Content\Frontend\images\product-15.jpg" />
+    <Content Include="Content\Frontend\images\product-16.jpg" />
+    <Content Include="Content\Frontend\images\product-detail-01.jpg" />
+    <Content Include="Content\Frontend\images\product-detail-02.jpg" />
+    <Content Include="Content\Frontend\images\product-detail-03.jpg" />
+    <Content Include="Content\Frontend\images\product-min-01.jpg" />
+    <Content Include="Content\Frontend\images\product-min-02.jpg" />
+    <Content Include="Content\Frontend\images\product-min-03.jpg" />
+    <Content Include="Content\Frontend\images\slide-01.jpg" />
+    <Content Include="Content\Frontend\images\slide-02.jpg" />
+    <Content Include="Content\Frontend\images\slide-03.jpg" />
+    <Content Include="Content\Frontend\images\slide-04.jpg" />
+    <Content Include="Content\Frontend\images\slide-05.jpg" />
+    <Content Include="Content\Frontend\images\slide-06.jpg" />
+    <Content Include="Content\Frontend\images\slide-07.jpg" />
+    <Content Include="Content\Frontend\images\thumb-01.jpg" />
+    <Content Include="Content\Frontend\images\thumb-02.jpg" />
+    <Content Include="Content\Frontend\images\thumb-03.jpg" />
+    <Content Include="Content\PagedList.css" />
     <Content Include="favicon.ico" />
+    <Content Include="fonts\font-awesome.min.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="fonts\Material-Design-Iconic-Font.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\animsition.min.js" />
@@ -254,13 +338,20 @@
     <Content Include="Content\Backend\scss\utilities\_progress.scss" />
     <Content Include="Content\Backend\scss\utilities\_rotate.scss" />
     <Content Include="Content\Backend\scss\utilities\_text.scss" />
+    <Content Include="fonts\Material-Design-Iconic-Font.eot" />
+    <Content Include="fonts\Material-Design-Iconic-Font.ttf" />
+    <Content Include="fonts\Material-Design-Iconic-Font.woff" />
+    <Content Include="fonts\Material-Design-Iconic-Font.woff2" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\daterangepicker.js" />
+    <Content Include="Scripts\all.min.js" />
     <Content Include="Scripts\demo\bootstrap.min.js" />
     <Content Include="Scripts\demo\chart-area-demo.js" />
     <Content Include="Scripts\demo\chart-bar-demo.js" />
     <Content Include="Scripts\demo\chart-pie-demo.js" />
     <Content Include="Scripts\demo\datatables-demo.js" />
+    <Content Include="Scripts\fontawesome.js" />
+    <Content Include="Scripts\fontawesome.min.js" />
     <Content Include="Scripts\isotope.pkgd.min.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -325,20 +416,20 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Produit\Index2.cshtml" />
     <Content Include="Views\Shared\_CustomLayoutBackend2.cshtml" />
-    <Content Include="Views\Produit\ProductList.cshtml" />
-    <Content Include="Views\Categorie\CategoryList.cshtml" />
-    <Content Include="Views\Categorie\CreateCategory.cshtml" />
-    <Content Include="Views\Produit\CreateProduct.cshtml" />
-    <Content Include="Views\Categorie\_PartialView.cshtml" />
-    <Content Include="Views\Produit\_PartialView.cshtml" />
     <Content Include="Views\Shared\_loginAdmin.cshtml" />
     <Content Include="Views\Shared\_registerAdmin.cshtml" />
-    <Content Include="Views\Categorie\CategoryList2.cshtml" />
-    <Content Include="Views\Store\CreateStore.cshtml" />
-    <Content Include="Views\Store\StoreList.cshtml" />
-    <Content Include="Views\Store\Edit.cshtml" />
-    <Content Include="Views\Store\Details.cshtml" />
     <Content Include="Views\Shared\_CustomLayoutFrontend.cshtml" />
+    <Content Include="Views\Produit\Edit.cshtml" />
+    <Content Include="Views\Stores\Create.cshtml" />
+    <Content Include="Views\Stores\Delete.cshtml" />
+    <Content Include="Views\Stores\f.cshtml" />
+    <Content Include="Views\Stores\Edit.cshtml" />
+    <Content Include="Views\Stores\Index.cshtml" />
+    <Content Include="Views\Produit\CreateProduct.cshtml" />
+    <Content Include="Views\Produit\Delete.cshtml" />
+    <Content Include="Views\Produit\Details.cshtml" />
+    <Content Include="Views\Produit\ProductList.cshtml" />
+    <Content Include="Views\Stores\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -365,6 +456,11 @@
       <Project>{bb876b03-b0df-4093-8725-a541df11461b}</Project>
       <Name>Services</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201910291540026_model.resx">
+      <DependentUpon>201910291540026_model.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

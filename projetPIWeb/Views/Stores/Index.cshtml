@@ -1,0 +1,93 @@
+﻿@model IEnumerable<Domaine.Store>
+
+@{
+    ViewBag.Title = "StoreList";
+    Layout = "~/Views/Shared/_CustomLayoutBackend2.cshtml";
+    // Layout = "~/Views/Shared/_CustomLayoutFrontend.cshtml";
+}
+
+<div style="text-align:right">
+    <input type="button" value="Create new store" onclick="location.href='@Url.Action("Create", "Stores")'" class="btn btn-primary" />
+</div>
+<h2>List of stores</h2>
+
+@using (Html.BeginForm())
+{
+    <table class="table">
+        <tr>
+            <th style="text-align:center">
+                Serach by name : @Html.TextBox("SearchString")
+                <input type="submit" value="Search" id="submit" class="btn btn-light" />
+            </th>
+
+            <th>
+
+            </th>
+        </tr>
+    </table>
+}
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nom)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ville)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Adresse)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tel)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.type)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.heure_ouv)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.heure_ferm)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nom)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ville)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Adresse)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.tel)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.type)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.heure_ouv)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.heure_ferm)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.BoutiqueId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.BoutiqueId }, null) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.BoutiqueId })
+            </td>
+        </tr>
+    }
+
+</table>

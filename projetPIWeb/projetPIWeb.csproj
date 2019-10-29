@@ -177,6 +177,10 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+<<<<<<< HEAD
+=======
+    <Compile Include="Controllers\CategorieController.cs" />
+>>>>>>> 8d0cbd98fb51a45bad9aec577c47663e1fa06754
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ProduitController.cs" />
@@ -190,6 +194,10 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+<<<<<<< HEAD
+=======
+    <Compile Include="Models\CategoryModel.cs" />
+>>>>>>> 8d0cbd98fb51a45bad9aec577c47663e1fa06754
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\ProduitModel.cs" />

@@ -52,28 +52,21 @@
   <ItemGroup>
     <Compile Include="IServiceBill.cs" />
     <Compile Include="IServiceBoutique.cs" />
-<<<<<<< HEAD
-    <Compile Include="IServiceNetwork.cs" />
     <Compile Include="IServiceBrand.cs" />
     <Compile Include="IServiceCategory.cs" />
-    <Compile Include="IServiceProduit.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ServiceBoutique.cs" />
-    <Compile Include="ServiceBrand.cs" />
-    <Compile Include="ServiceCategory.cs" />
-    <Compile Include="ServiceNetwork.cs" />
-=======
-    <Compile Include="IServiceCategorie.cs" />
     <Compile Include="IServiceCommande.cs" />
     <Compile Include="IServiceCommandeLigne.cs" />
+    <Compile Include="IServiceNetwork.cs" />
     <Compile Include="IServiceProduit.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ServiceBills.cs" />
+    <Compile Include="ServiceBrand.cs" />
     <Compile Include="ServiceCategorie.cs" />
     <Compile Include="ServiceBoutique.cs" />
+    <Compile Include="ServiceCategory.cs" />
     <Compile Include="ServiceCommande.cs" />
     <Compile Include="ServiceCommandeLigne.cs" />
->>>>>>> 8d0cbd98fb51a45bad9aec577c47663e1fa06754
+    <Compile Include="ServiceNetwork.cs" />
     <Compile Include="ServiceProduit.cs" />
   </ItemGroup>
   <ItemGroup>

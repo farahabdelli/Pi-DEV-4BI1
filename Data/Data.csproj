@@ -58,31 +58,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
-    <Compile Include="Migrations\201910291514592_productt.cs" />
-    <Compile Include="Migrations\201910291514592_productt.Designer.cs">
-      <DependentUpon>201910291514592_productt.cs</DependentUpon>
-=======
-    <Compile Include="Migrations\201910281603425_ahmed.cs" />
-    <Compile Include="Migrations\201910281603425_ahmed.Designer.cs">
-      <DependentUpon>201910281603425_ahmed.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201910281736162_ahmed1.cs" />
-    <Compile Include="Migrations\201910281736162_ahmed1.Designer.cs">
-      <DependentUpon>201910281736162_ahmed1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201910281742477_ahmed2.cs" />
-    <Compile Include="Migrations\201910281742477_ahmed2.Designer.cs">
-      <DependentUpon>201910281742477_ahmed2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201910261920495_migration2.cs" />
-    <Compile Include="Migrations\201910261920495_migration2.Designer.cs">
-      <DependentUpon>201910261920495_migration2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201910271931566_store.cs" />
-    <Compile Include="Migrations\201910271931566_store.Designer.cs">
-      <DependentUpon>201910271931566_store.cs</DependentUpon>
->>>>>>> 8d0cbd98fb51a45bad9aec577c47663e1fa06754
+    <Compile Include="Migrations\201910291809596_farahdata.cs" />
+    <Compile Include="Migrations\201910291809596_farahdata.Designer.cs">
+      <DependentUpon>201910291809596_farahdata.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="projetPIContext.cs" />
@@ -110,29 +88,12 @@
     <Folder Include="MyConventions\" />
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
-    <EmbeddedResource Include="Migrations\201910291514592_productt.resx">
-      <DependentUpon>201910291514592_productt.cs</DependentUpon>
-=======
-    <EmbeddedResource Include="Migrations\201910281603425_ahmed.resx">
-      <DependentUpon>201910281603425_ahmed.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201910281736162_ahmed1.resx">
-      <DependentUpon>201910281736162_ahmed1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201910281742477_ahmed2.resx">
-      <DependentUpon>201910281742477_ahmed2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201910261920495_migration2.resx">
-      <DependentUpon>201910261920495_migration2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201910271931566_store.resx">
-      <DependentUpon>201910271931566_store.cs</DependentUpon>
->>>>>>> 8d0cbd98fb51a45bad9aec577c47663e1fa06754
-    </EmbeddedResource>
+    <Content Include="Content\PagedList.css" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\PagedList.css" />
+    <EmbeddedResource Include="Migrations\201910291809596_farahdata.resx">
+      <DependentUpon>201910291809596_farahdata.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -19,7 +19,7 @@ namespace projetPIWeb.Controllers
         ServiceBrand sb = new ServiceBrand();
         ServiceNetwork sn = new ServiceNetwork();
         // GET: Product
-        public ActionResult ProductList(int? page, string sortOrder)
+        public ActionResult ProductList( string sortOrder)
         {
             ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "nom_desc" : "";
 
@@ -36,9 +36,7 @@ namespace projetPIWeb.Controllers
                     produits = produits.OrderBy(s => s.Nom);
                     break;
             }
-            int pageSize = 6;
-            int pageNumber = (page ?? 1);
-            return View(produits.ToPagedList(pageNumber, pageSize));
+            return View(produits);
           
         }
        

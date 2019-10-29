@@ -15,7 +15,7 @@ namespace Services
         private static DatabaseFactory dbf = new DatabaseFactory();
 
         private static IUnitOfWork uow = new UnitOfWork(dbf);
-        public ServiceNetwork() : base(uow)
+        public ServiceNetwork():base(uow)
         { }
 
 

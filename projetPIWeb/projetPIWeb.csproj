@@ -177,10 +177,6 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-<<<<<<< HEAD
-=======
-    <Compile Include="Controllers\CategorieController.cs" />
->>>>>>> 8d0cbd98fb51a45bad9aec577c47663e1fa06754
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ProduitController.cs" />
@@ -192,12 +188,12 @@
     <Compile Include="Migrations\201910291540026_model.Designer.cs">
       <DependentUpon>201910291540026_model.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201910291810352_farahWEB.cs" />
+    <Compile Include="Migrations\201910291810352_farahWEB.Designer.cs">
+      <DependentUpon>201910291810352_farahWEB.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
-<<<<<<< HEAD
-=======
-    <Compile Include="Models\CategoryModel.cs" />
->>>>>>> 8d0cbd98fb51a45bad9aec577c47663e1fa06754
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\ProduitModel.cs" />
@@ -430,7 +426,6 @@
     <Content Include="Views\Produit\Edit.cshtml" />
     <Content Include="Views\Stores\Create.cshtml" />
     <Content Include="Views\Stores\Delete.cshtml" />
-    <Content Include="Views\Stores\f.cshtml" />
     <Content Include="Views\Stores\Edit.cshtml" />
     <Content Include="Views\Stores\Index.cshtml" />
     <Content Include="Views\Produit\CreateProduct.cshtml" />
@@ -468,6 +463,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201910291540026_model.resx">
       <DependentUpon>201910291540026_model.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910291810352_farahWEB.resx">
+      <DependentUpon>201910291810352_farahWEB.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

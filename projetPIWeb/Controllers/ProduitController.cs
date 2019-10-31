@@ -9,6 +9,7 @@ using Services;
 using PagedList;
 using System;
 
+
 namespace projetPIWeb.Controllers
 {
     public class ProduitController : Controller
@@ -19,7 +20,7 @@ namespace projetPIWeb.Controllers
         ServiceBrand sb = new ServiceBrand();
         ServiceNetwork sn = new ServiceNetwork();
         // GET: Product
-        public ActionResult ProductList( string sortOrder)
+        public ActionResult ProductList(string sortOrder)
         {
             ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "nom_desc" : "";
 
@@ -31,22 +32,17 @@ namespace projetPIWeb.Controllers
                 case "name_desc":
                     produits = produits.OrderByDescending(s => s.Nom);
                     break;
-                
+
                 default:
                     produits = produits.OrderBy(s => s.Nom);
                     break;
             }
             return View(produits);
-          
+
         }
-       
-        // GET: Product
-        public ActionResult Index2()
-        {
-            List<Product> listproduit = Session["Produits"] as List<Product>;
-            var produits = sp.GetMany();
-            return View(produits);
-        }
+
+    
+
         // POST: Product
         [HttpPost]
         public ActionResult Index(string SearchString)
@@ -60,7 +56,7 @@ namespace projetPIWeb.Controllers
         {
             var produits = sp.GetById(id);
             return View(produits);
-          
+
         }
 
         // GET: Product/Create
@@ -98,16 +94,16 @@ namespace projetPIWeb.Controllers
                 Image = pm.Image,
                 Nom = pm.Nom,
                 CategorieId = pm.CategorieId,
-                BrandId=pm.BrandId,
-                NetworkId=pm.NetworkId,
+                BrandId = pm.BrandId,
+                NetworkId = pm.NetworkId,
                 Prix = pm.Prix,
                 Quantite = pm.Quantite,
-               
+
             };
             //path image
             var path = Path.Combine(Server.MapPath("~/Content/Upload/"), Image.FileName);
             Image.SaveAs(path);
-           
+
             try
             {
                 sp.Add(p);
@@ -133,14 +129,14 @@ namespace projetPIWeb.Controllers
 
         // POST: Produit/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection,ProduitModel pm, HttpPostedFileBase Image)
+        public ActionResult Edit(int id, FormCollection collection, ProduitModel pm, HttpPostedFileBase Image)
         {
-           
-            
+
+
             try
             {
                 // TODO: Add update logic here
-               // sp.Update(pm);
+                // sp.Update(pm);
                 return RedirectToAction("ProductList");
             }
             catch
@@ -167,8 +163,8 @@ namespace projetPIWeb.Controllers
 
                 sp.Delete(p);
                 sp.Commit();
-                
-                
+
+
                 return RedirectToAction("ProductList");
             }
             catch
@@ -176,5 +172,60 @@ namespace projetPIWeb.Controllers
                 return View();
             }
         }
+
+
+        /// //////////////////////////FRONT CONTROLLER //////////////////////////////////////////
+
+
+        // GET: Product front
+
+        public ActionResult Index2()
+        {
+            
+            var products = sp.GetMany();
+
+            return View(products);
+
+        }
+        public ActionResult Mobilelist()
+        {
+            var f = sp.mobile();
+            
+            return View(f);
+
+        }
+        public ActionResult Tabletlist()
+        {
+            var f = sp.Tablet();
+
+            return View(f);
+
+        }
+        public ActionResult ADSLlist()
+        {
+            var f = sp.ADSL();
+
+            return View(f);
+        }
+
+             public ActionResult FlyboxList()
+        {
+            var f = sp.Flybox();
+
+            return View(f);
+
+        }
+    
+    
+
+
+        // GET: Product/Details/5
+        public ActionResult DetailsFront(int id)
+        {
+            var produits = sp.GetById(id);
+            return View(produits);
+
+        }
+
     }
 }

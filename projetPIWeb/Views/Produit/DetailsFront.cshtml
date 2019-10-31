@@ -1,0 +1,69 @@
+﻿@model Domaine.Product
+
+@{
+    ViewBag.Title = "DetailsFront";
+    Layout = "~/Views/Shared/_CustomLayoutFrontend.cshtml";
+}
+
+<h2>Product Details</h2>
+<section class="sec-product-detail bg0 p-t-65 p-b-60">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-lg-7 p-b-30">
+                <div class="p-l-25 p-r-30 p-lr-0-lg">
+                    <div class="wrap-slick3 flex-sb flex-w">
+                        <div class="wrap-slick3-dots"></div>
+                        <div class="wrap-slick3-arrows flex-sb-m flex-w"></div>
+
+                        <div class="slick3 gallery-lb">
+                            @{string path = "~/Content/Upload/" + Model.Image;}
+                            <div class="item-slick3" data-thumb="@Url.Content(path)">
+                                <div class="wrap-pic-w pos-relative">
+
+                                   
+                                    <img class="img-responsive" title="Click to View Product detail"
+                                         style="cursor:pointer;height:160px;width:100%"
+                                         src="@Url.Content(path)" width="80" height="80" />
+
+                                  
+                                </div>
+                            </div>
+
+                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-5 p-b-30">
+                <div class="p-r-50 p-t-5 p-lr-0-lg">
+                    <h4 class="mtext-105 cl2 js-name-detail p-b-14">
+                        @Html.DisplayFor(model => model.Nom)
+                    </h4>
+
+                    <span class="mtext-106 cl2">
+                       @Html.DisplayFor(model => model.Prix)
+                    </span>
+                    <br />
+                    <p class="stext-102 cl3 p-t-23">
+                       @Html.DisplayFor(model => model.Description)
+                    </p>
+                    <br />
+                    <br />
+                   <input type="number" />
+                    <br />
+                    <input type="button" value="Add to cart" onclick="location.href='@Url.Action("Index2", "Produit")'" class="btn btn-default" />
+
+                  
+                    </div>
+                </div>
+            </div>
+        </div>
+        </section>
+
+                    <p>
+                        <input type="button" value="Back to List" onclick="location.href='@Url.Action("Index2", "Produit")'" class="btn btn-dark" />
+                       
+                       
+                    </p>
+

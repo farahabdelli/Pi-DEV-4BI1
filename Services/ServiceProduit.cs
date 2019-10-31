@@ -30,15 +30,31 @@ namespace Services
                                        select p;
             return req.Take(5);
         }
-       
-       /* public IEnumerable<string> GetProductbyClient(Client c)
-        {
-            var req = from f in uow.getRepository<Facture>().GetMany()
-                      where f.Client.Cin == c.Cin
-                      select f.Product.Name;
-            return req;
 
-        }*/
+        public IEnumerable<Product> mobile()
+        {
+            
+            return GetMany(p => p.Categorie.Nom.Equals("Smartphone"));
+        }
+
+        public IEnumerable<Product> Tablet()
+        {
+
+            return GetMany(p => p.Categorie.Nom.Equals("Tablet"));
+        }
+
+        public IEnumerable<Product> ADSL()
+        {
+
+            return GetMany(p => p.Categorie.Nom.Equals("ADSL"));
+        }
+
+        public IEnumerable<Product> Flybox()
+        {
+
+            return GetMany(p => p.Categorie.Nom.Equals("Flybox"));
+        }
+
 
     }
 }

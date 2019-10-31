@@ -1,13 +1,13 @@
-﻿using System;
+﻿using Domaine;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Web;
 
-namespace Domaine
+namespace projetPIWeb.Models
 {
-    public class Store
+    public class StoreModel
     {
         [Key]
         public int BoutiqueId { get; set; }
@@ -38,10 +38,6 @@ namespace Domaine
         [Display(Name = "Closes at")]
         public string heure_ferm { get; set; }
 
-        //  public virtual ICollection<Product> Produits { get; set; }
+        // public virtual ICollection<Product> Produits { get; set; }
     }
 }
-
-/*-type :boutique,point de vente,smart store
-service:ou payer ma facture, ou s achetent
-les produits, besoin SAV*/

@@ -192,11 +192,20 @@
     <Compile Include="Migrations\201910291810352_farahWEB.Designer.cs">
       <DependentUpon>201910291810352_farahWEB.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201910311642232_farah.cs" />
+    <Compile Include="Migrations\201910311642232_farah.Designer.cs">
+      <DependentUpon>201910311642232_farah.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910311646244_fffff.cs" />
+    <Compile Include="Migrations\201910311646244_fffff.Designer.cs">
+      <DependentUpon>201910311646244_fffff.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\ProduitModel.cs" />
+    <Compile Include="Models\StoreModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -225,8 +234,10 @@
     <Content Include="Content\Frontend\css\select2.min.css" />
     <Content Include="Content\Frontend\css\slick.css" />
     <Content Include="Content\Frontend\css\util.css" />
+    <Content Include="Content\Frontend\images\11pro.jpg" />
     <Content Include="Content\Frontend\images\about-01.jpg" />
     <Content Include="Content\Frontend\images\about-02.jpg" />
+    <Content Include="Content\Frontend\images\ADSL-BANNER.jpg" />
     <Content Include="Content\Frontend\images\avatar-01.jpg" />
     <Content Include="Content\Frontend\images\banner-01.jpg" />
     <Content Include="Content\Frontend\images\banner-02.jpg" />
@@ -245,6 +256,7 @@
     <Content Include="Content\Frontend\images\blog-04.jpg" />
     <Content Include="Content\Frontend\images\blog-05.jpg" />
     <Content Include="Content\Frontend\images\blog-06.jpg" />
+    <Content Include="Content\Frontend\images\Flybox.png" />
     <Content Include="Content\Frontend\images\gallery-01.jpg" />
     <Content Include="Content\Frontend\images\gallery-02.jpg" />
     <Content Include="Content\Frontend\images\gallery-03.jpg" />
@@ -271,11 +283,13 @@
     <Content Include="Content\Frontend\images\icons\logo-02.png" />
     <Content Include="Content\Frontend\images\icons\pin.png" />
     <Content Include="Content\Frontend\images\img1.jpg" />
+    <Content Include="Content\Frontend\images\iphone.jpeg" />
     <Content Include="Content\Frontend\images\item-cart-01.jpg" />
     <Content Include="Content\Frontend\images\item-cart-02.jpg" />
     <Content Include="Content\Frontend\images\item-cart-03.jpg" />
     <Content Include="Content\Frontend\images\item-cart-04.jpg" />
     <Content Include="Content\Frontend\images\item-cart-05.jpg" />
+    <Content Include="Content\Frontend\images\phones.jpg" />
     <Content Include="Content\Frontend\images\product-01.jpg" />
     <Content Include="Content\Frontend\images\product-02.jpg" />
     <Content Include="Content\Frontend\images\product-03.jpg" />
@@ -298,6 +312,8 @@
     <Content Include="Content\Frontend\images\product-min-01.jpg" />
     <Content Include="Content\Frontend\images\product-min-02.jpg" />
     <Content Include="Content\Frontend\images\product-min-03.jpg" />
+    <Content Include="Content\Frontend\images\s10.jpg" />
+    <Content Include="Content\Frontend\images\s102.jpg" />
     <Content Include="Content\Frontend\images\slide-01.jpg" />
     <Content Include="Content\Frontend\images\slide-02.jpg" />
     <Content Include="Content\Frontend\images\slide-03.jpg" />
@@ -305,6 +321,7 @@
     <Content Include="Content\Frontend\images\slide-05.jpg" />
     <Content Include="Content\Frontend\images\slide-06.jpg" />
     <Content Include="Content\Frontend\images\slide-07.jpg" />
+    <Content Include="Content\Frontend\images\tablet1.jpg" />
     <Content Include="Content\Frontend\images\thumb-01.jpg" />
     <Content Include="Content\Frontend\images\thumb-02.jpg" />
     <Content Include="Content\Frontend\images\thumb-03.jpg" />
@@ -424,15 +441,20 @@
     <Content Include="Views\Shared\_registerAdmin.cshtml" />
     <Content Include="Views\Shared\_CustomLayoutFrontend.cshtml" />
     <Content Include="Views\Produit\Edit.cshtml" />
-    <Content Include="Views\Stores\Create.cshtml" />
-    <Content Include="Views\Stores\Delete.cshtml" />
-    <Content Include="Views\Stores\Edit.cshtml" />
-    <Content Include="Views\Stores\Index.cshtml" />
     <Content Include="Views\Produit\CreateProduct.cshtml" />
     <Content Include="Views\Produit\Delete.cshtml" />
     <Content Include="Views\Produit\Details.cshtml" />
     <Content Include="Views\Produit\ProductList.cshtml" />
-    <Content Include="Views\Stores\Details.cshtml" />
+    <Content Include="Views\Produit\DetailsFront.cshtml" />
+    <Content Include="Views\Stores\Index.cshtml" />
+    <Content Include="Views\Stores\DeleteStore.cshtml" />
+    <Content Include="Views\Stores\DetailsStore.cshtml" />
+    <Content Include="Views\Stores\CreateStore.cshtml" />
+    <Content Include="Views\Stores\Edit.cshtml" />
+    <Content Include="Views\Produit\FlyboxList.cshtml" />
+    <Content Include="Views\Produit\ADSLlist.cshtml" />
+    <Content Include="Views\Produit\Mobilelist.cshtml" />
+    <Content Include="Views\Produit\Tabletlist.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -466,6 +488,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201910291810352_farahWEB.resx">
       <DependentUpon>201910291810352_farahWEB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910311642232_farah.resx">
+      <DependentUpon>201910311642232_farah.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910311646244_fffff.resx">
+      <DependentUpon>201910311646244_fffff.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -58,9 +58,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Migrations\201910291809596_farahdata.cs" />
-    <Compile Include="Migrations\201910291809596_farahdata.Designer.cs">
-      <DependentUpon>201910291809596_farahdata.cs</DependentUpon>
+    <Compile Include="Migrations\201910311637466_farah.cs" />
+    <Compile Include="Migrations\201910311637466_farah.Designer.cs">
+      <DependentUpon>201910311637466_farah.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910311646383_fffff.cs" />
+    <Compile Include="Migrations\201910311646383_fffff.Designer.cs">
+      <DependentUpon>201910311646383_fffff.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="projetPIContext.cs" />
@@ -91,8 +95,11 @@
     <Content Include="Content\PagedList.css" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201910291809596_farahdata.resx">
-      <DependentUpon>201910291809596_farahdata.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201910311637466_farah.resx">
+      <DependentUpon>201910311637466_farah.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910311646383_fffff.resx">
+      <DependentUpon>201910311646383_fffff.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

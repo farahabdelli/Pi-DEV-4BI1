@@ -24,7 +24,6 @@ namespace Data
         public DbSet<Question> Questions { get; set; }
         public DbSet<Reponse> Reponses { get; set; }
         public DbSet<Publicite> Publicites { get; set; }
-        public DbSet<Stock> Stocks { get; set; }
         public DbSet<Pack> Packs { get; set; }
         public DbSet<Promotion> Promotions { get; set; }
         public DbSet<Offer> Offers { get; set; }

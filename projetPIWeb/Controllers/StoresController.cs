@@ -8,121 +8,121 @@ using System.Web;
 using System.Web.Mvc;
 using Domaine;
 using projetPIWeb.Models;
+using Services;
 
 namespace projetPIWeb.Controllers
 {
     public class StoresController : Controller
     {
-        private ApplicationDbContext db = new ApplicationDbContext();
+        ServiceBoutique sb = new ServiceBoutique();
 
         // GET: Stores
         public ActionResult Index()
         {
-            return View(db.Stores.ToList());
+            var s = sb.GetMany();
+            return View(s);
         }
 
         // GET: Stores/Details/5
-        public ActionResult Details(int? id)
+        public ActionResult DetailsStore(int id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Store store = db.Stores.Find(id);
-            if (store == null)
-            {
-                return HttpNotFound();
-            }
-            return View(store);
+            var s = sb.GetById(id);
+            return View(s);
         }
 
         // GET: Stores/Create
-        public ActionResult Create()
+        public ActionResult CreateStore()
         {
-            return View();
+            StoreModel pm = new StoreModel();
+            return View(pm);
         }
 
-        // POST: Stores/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        // POST: Product/Create
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "BoutiqueId,Nom,Ville,Adresse,Description,tel,type,heure_ouv,heure_ferm")] Store store)
+        public ActionResult CreateStore(StoreModel sm)
         {
-            if (ModelState.IsValid)
+
+            Store s = new Store()
             {
-                db.Stores.Add(store);
-                db.SaveChanges();
+                Nom = sm.Nom,
+                Description = sm.Description,
+                Adresse = sm.Adresse,
+                Ville = sm.Ville,
+                tel = sm.tel,
+                type = sm.type,
+                heure_ouv = sm.heure_ouv,
+                heure_ferm = sm.heure_ferm,
+                //Produits = sm.Produits
+
+            };
+
+            try
+            {
+                sb.Add(s);
+            
+                sb.Commit();
+
                 return RedirectToAction("Index");
             }
-
-            return View(store);
+            catch
+            {
+                return View();
+            }
         }
 
-        // GET: Stores/Edit/5
-        public ActionResult Edit(int? id)
+
+        // GET: Produit/Edit/5
+        public ActionResult Edit(int id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Store store = db.Stores.Find(id);
-            if (store == null)
-            {
-                return HttpNotFound();
-            }
-            return View(store);
+            var s = sb.GetById(id);
+            return View(s);
         }
 
-        // POST: Stores/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        // POST: Produit/Edit/5
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "BoutiqueId,Nom,Ville,Adresse,Description,tel,type,heure_ouv,heure_ferm")] Store store)
+        public ActionResult Edit(int id, FormCollection collection, StoreModel pm)
         {
-            if (ModelState.IsValid)
+
+
+            try
             {
-                db.Entry(store).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                // TODO: Add update logic here
+                // sp.Update(pm);
+                return RedirectToAction("ProductList");
             }
-            return View(store);
+            catch
+            {
+                return View();
+            }
         }
 
         // GET: Stores/Delete/5
-        public ActionResult Delete(int? id)
+        public ActionResult DeleteStore(int id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Store store = db.Stores.Find(id);
-            if (store == null)
-            {
-                return HttpNotFound();
-            }
-            return View(store);
+            var s = sb.GetById(id);
+            return View(s);
         }
 
-        // POST: Stores/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
+        // POST: Store/Delete/5
+        [HttpPost]
+        public ActionResult DeleteStore(int id, FormCollection collection)
         {
-            Store store = db.Stores.Find(id);
-            db.Stores.Remove(store);
-            db.SaveChanges();
-            return RedirectToAction("Index");
+            var s = sb.GetById(id);
+            try
+            {
+                // TODO: Add delete logic here
+
+                sb.Delete(s);
+                sb.Commit();
+
+
+                return RedirectToAction("Index");
+            }
+            catch
+            {
+                return View();
+            }
         }
 
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                db.Dispose();
-            }
-            base.Dispose(disposing);
-        }
     }
 }

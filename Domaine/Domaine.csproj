@@ -61,6 +61,7 @@
     <Compile Include="Brand.cs" />
     <Compile Include="Network.cs" />
     <Compile Include="Bill.cs" />
+    <Compile Include="ProductStore.cs" />
     <Compile Include="Store.cs" />
     <Compile Include="Category.cs" />
     <Compile Include="Commande.cs" />

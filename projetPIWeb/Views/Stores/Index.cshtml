@@ -1,42 +1,44 @@
-﻿@model IEnumerable<Domaine.Store>
+﻿@using PagedList;
+@using PagedList.Mvc;
+@model IPagedList<Domaine.Store>
 
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_CustomLayoutBackend2.cshtml";
 }
-
+<br />
 <h2>List of stores</h2>
 
 <div style="text-align:right">
     
     <input type="button" value="Create new Store" onclick="location.href='@Url.Action("CreateStore", "Stores")'" class="btn btn-primary" />
 
-</div>
+</div><br />
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Nom)
+            @Html.DisplayNameFor(model => model.First().Nom)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Ville)
+            @Html.DisplayNameFor(model => model.First().Ville)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Adresse)
+            @Html.DisplayNameFor(model => model.First().Adresse)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Description)
+            @Html.DisplayNameFor(model => model.First().Description)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.tel)
+            @Html.DisplayNameFor(model => model.First().tel)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.type)
+            @Html.DisplayNameFor(model => model.First().type)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.heure_ouv)
+            @Html.DisplayNameFor(model => model.First().heure_ouv)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.heure_ferm)
+            @Html.DisplayNameFor(model => model.First().heure_ferm)
         </th>
         <th></th>
     </tr>
@@ -76,3 +78,4 @@
 }
 
 </table>
+@Html.PagedListPager(Model, Page => Url.Action("Index", new { Page })) 

@@ -15,7 +15,7 @@ namespace Domaine
         [Required(ErrorMessage = "Entrer le nom de produit")]
         [StringLength(25, ErrorMessage = "nom ne doit pas dépasser 25")]
         [MaxLength(50)]
-        [Display(Name = "Name")]
+        [Display(Name = "Product")]
         public string Nom { get; set; }
         [DataType(DataType.MultilineText)]
         public string Description { get; set; }
@@ -41,6 +41,8 @@ namespace Domaine
         public virtual Network Network { get; set; }
         // [ForeignKey("Network")]
         public int? NetworkId { get; set; }
+
+        public virtual ICollection<ProductStore> ProductStores { get; set; }
 
 
 

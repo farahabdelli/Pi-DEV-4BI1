@@ -1,0 +1,32 @@
+﻿@model Domaine.ProductStore
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_CustomLayoutBackend2.cshtml";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>ProductStore</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.ProduitId)
+
+        @Html.HiddenFor(model => model.BoutiqueId)
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

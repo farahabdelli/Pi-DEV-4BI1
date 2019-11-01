@@ -9,6 +9,7 @@ using System.Web.Mvc;
 using Domaine;
 using projetPIWeb.Models;
 using Services;
+using PagedList;
 
 namespace projetPIWeb.Controllers
 {
@@ -17,10 +18,24 @@ namespace projetPIWeb.Controllers
         ServiceBoutique sb = new ServiceBoutique();
 
         // GET: Stores
-        public ActionResult Index()
+
+        public ActionResult Index(string sortOrder, int? page)
         {
+            ViewBag.CurrentSort = sortOrder;
+            ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
             var s = sb.GetMany();
-            return View(s);
+            switch (sortOrder)
+            {
+                case "name_desc":
+                    s = s.OrderByDescending(ss => ss.Nom);
+                    break;
+                default:
+                    s = s.OrderByDescending(ss => ss.Nom);
+                    break;
+
+            }
+            return View(s.ToPagedList(page ?? 1, 1));
+
         }
 
         // GET: Stores/Details/5

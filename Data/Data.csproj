@@ -66,6 +66,10 @@
     <Compile Include="Migrations\201910311646383_fffff.Designer.cs">
       <DependentUpon>201910311646383_fffff.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201910312033453_productstores.cs" />
+    <Compile Include="Migrations\201910312033453_productstores.Designer.cs">
+      <DependentUpon>201910312033453_productstores.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="projetPIContext.cs" />
     <Compile Include="Infrastructure\DatabaseFactory.cs" />
@@ -100,6 +104,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201910311646383_fffff.resx">
       <DependentUpon>201910311646383_fffff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910312033453_productstores.resx">
+      <DependentUpon>201910312033453_productstores.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

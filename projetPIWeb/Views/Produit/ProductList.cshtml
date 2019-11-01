@@ -1,11 +1,14 @@
-﻿@model IEnumerable<Domaine.Product>
+﻿@using PagedList;
+@using PagedList.Mvc;
+@model IPagedList<Domaine.Product>
 
 
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_CustomLayoutBackend2.cshtml";
 }
-
+<br />
+<h2>List of products</h2>
 <div style="text-align:right">
     <input type="button" value="Create new Product" onclick="location.href='@Url.Action("CreateProduct", "Produit")'" class="btn btn-primary" />
 </div>
@@ -14,35 +17,35 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Nom)
+            @Html.DisplayNameFor(model => model.First().Nom)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Image)
+            @Html.DisplayNameFor(model => model.First().Image)
         </th>
         <th>
 
-            @Html.DisplayNameFor(model => model.Categorie.Nom)
-        </th>
-
-        <th>
-
-            @Html.DisplayNameFor(model => model.Brand.Nom)
+            @Html.DisplayNameFor(model => model.First().Categorie.Nom)
         </th>
 
         <th>
 
-            @Html.DisplayNameFor(model => model.Network.Nom)
+            @Html.DisplayNameFor(model => model.First().Brand.Nom)
+        </th>
+
+        <th>
+
+            @Html.DisplayNameFor(model => model.First().Network.Nom)
         </th>
 
 
         <th>
-            @Html.DisplayNameFor(model => model.Prix)
+            @Html.DisplayNameFor(model => model.First().Prix)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Quantite)
+            @Html.DisplayNameFor(model => model.First().Quantite)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Description)
+            @Html.DisplayNameFor(model => model.First().Description)
         </th>
 
         <th></th>
@@ -89,3 +92,5 @@
                     }
 
 </table>
+            @Html.PagedListPager(Model, Page => Url.Action("ProductList", new { Page })) 
+        

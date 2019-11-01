@@ -179,6 +179,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ProductStoresController.cs" />
     <Compile Include="Controllers\ProduitController.cs" />
     <Compile Include="Controllers\StoresController.cs" />
     <Compile Include="Global.asax.cs">
@@ -200,11 +201,21 @@
     <Compile Include="Migrations\201910311646244_fffff.Designer.cs">
       <DependentUpon>201910311646244_fffff.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201910312034120_productstores.cs" />
+    <Compile Include="Migrations\201910312034120_productstores.Designer.cs">
+      <DependentUpon>201910312034120_productstores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910312104386_data.cs" />
+    <Compile Include="Migrations\201910312104386_data.Designer.cs">
+      <DependentUpon>201910312104386_data.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\ProductStoreModel.cs" />
     <Compile Include="Models\ProduitModel.cs" />
+    <Compile Include="Models\projetPIWebContext.cs" />
     <Compile Include="Models\StoreModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -435,7 +446,7 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Produit\Index2.cshtml" />
+    <Content Include="Views\Produit\HomeFront.cshtml" />
     <Content Include="Views\Shared\_CustomLayoutBackend2.cshtml" />
     <Content Include="Views\Shared\_loginAdmin.cshtml" />
     <Content Include="Views\Shared\_registerAdmin.cshtml" />
@@ -455,6 +466,11 @@
     <Content Include="Views\Produit\ADSLlist.cshtml" />
     <Content Include="Views\Produit\Mobilelist.cshtml" />
     <Content Include="Views\Produit\Tabletlist.cshtml" />
+    <Content Include="Views\ProductStores\Create.cshtml" />
+    <Content Include="Views\ProductStores\Delete.cshtml" />
+    <Content Include="Views\ProductStores\Details.cshtml" />
+    <Content Include="Views\ProductStores\Edit.cshtml" />
+    <Content Include="Views\ProductStores\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -494,6 +510,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201910311646244_fffff.resx">
       <DependentUpon>201910311646244_fffff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910312034120_productstores.resx">
+      <DependentUpon>201910312034120_productstores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910312104386_data.resx">
+      <DependentUpon>201910312104386_data.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

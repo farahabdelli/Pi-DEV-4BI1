@@ -21,7 +21,7 @@ namespace projetPIWeb.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+            : base("projetPIDataBase", throwIfV1Schema: false)
         {
         }
 
@@ -43,5 +43,9 @@ namespace projetPIWeb.Models
         public System.Data.Entity.DbSet<Domaine.Network> Networks { get; set; }
 
         public System.Data.Entity.DbSet<projetPIWeb.Models.StoreModel> StoreModels { get; set; }
+
+        public System.Data.Entity.DbSet<projetPIWeb.Models.ProductStoreModel> ProductStoreModels { get; set; }
+
+        public System.Data.Entity.DbSet<Domaine.ProductStore> ProductStores { get; set; }
     }
 }

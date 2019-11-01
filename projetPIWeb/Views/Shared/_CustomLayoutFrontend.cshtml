@@ -9,6 +9,8 @@
 
 
     @Styles.Render("~/template/Frontend/css")
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
     <!--===============================================================================================-->
 </head>
 <body class="animsition">
@@ -29,7 +31,7 @@
                     <div class="menu-desktop">
                         <ul class="main-menu">
                             <li>
-                                <a href="@Url.Action("Index2", "Produit")">Home</a>
+                                <a href="@Url.Action("HomeFront", "Produit")">Home</a>
                                
                             </li>
 
@@ -71,7 +73,7 @@
                     <!-- Icon header -->
                     <div class="wrap-icon-header flex-w flex-r-m h-full">
                         <div class="flex-c-m h-full p-r-25 bor6">
-                            <div class="icon-header-item cl0 hov-cl1 trans-04 p-lr-11 icon-header-noti js-show-cart" data-notify="2">
+                            <div class="icon-header-item cl0 hov-cl1 trans-04 p-lr-11  js-show-cart" >
                                 <i class="zmdi zmdi-shopping-cart"></i>
                             </div>
                         </div>
@@ -96,7 +98,7 @@
             <!-- Icon header -->
             <div class="wrap-icon-header flex-w flex-r-m h-full m-r-15">
                 <div class="flex-c-m h-full p-r-5">
-                    <div class="icon-header-item cl2 hov-cl1 trans-04 p-lr-11 icon-header-noti js-show-cart" data-notify="2">
+                    <div class="icon-header-item cl2 hov-cl1 trans-04 p-lr-11 >
                         <i class="zmdi zmdi-shopping-cart"></i>
                     </div>
                 </div>
@@ -166,7 +168,7 @@
             <div class="sidebar-content flex-w w-full p-lr-65 js-pscroll">
                 <ul class="sidebar-link w-full">
                     <li class="p-b-13">
-                        <a href="index.html" class="stext-102 cl2 hov-cl1 trans-04">
+                        <a href="@Url.Action("HomeFront","Produit")" class="stext-102 cl2 hov-cl1 trans-04">
                             Home
                         </a>
                     </li>
@@ -176,6 +178,11 @@
                     <li class="p-b-13">
                         <a href="#" class="stext-102 cl2 hov-cl1 trans-04">
                             My Account
+                        </a>
+                    </li>
+                    <li class="p-b-13">
+                        <a href="#" class="stext-102 cl2 hov-cl1 trans-04">
+                            My Cart
                         </a>
                     </li>
 
@@ -196,46 +203,7 @@
     </aside>
 
 
-    <!-- Cart -->
-    <div class="wrap-header-cart js-panel-cart">
-        <div class="s-full js-hide-cart"></div>
-
-        <div class="header-cart flex-col-l p-l-65 p-r-25">
-            <div class="header-cart-title flex-w flex-sb-m p-b-8">
-                <span class="mtext-103 cl2">
-                    Your Cart
-                </span>
-
-                <div class="fs-35 lh-10 cl2 p-lr-5 pointer hov-cl1 trans-04 js-hide-cart">
-                    <i class="zmdi zmdi-close"></i>
-                </div>
-            </div>
-
-            <div class="header-cart-content flex-w js-pscroll">
-                <ul class="header-cart-wrapitem w-full">
-                   
-
-                    
-                </ul>
-
-                <div class="w-full">
-                    <div class="header-cart-total w-full p-tb-40">
-                        Total: 
-                    </div>
-
-                    <div class="header-cart-buttons flex-w w-full">
-                        <a href="shoping-cart.html" class="flex-c-m stext-101 cl0 size-107 bg3 bor2 hov-btn3 p-lr-15 trans-04 m-r-8 m-b-10">
-                            View Cart
-                        </a>
-
-                     
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
+    
 
     <!-- Slider -->
     <section class="section-slide">
@@ -257,7 +225,7 @@
                             </div>
 
                             <div class="layer-slick1 animated visible-false" data-appear="zoomIn" data-delay="1600">
-                                <a href="product.html" class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn2 p-lr-15 trans-04">
+                                <a href="@Url.Action("HomeFront","Produit")" class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn2 p-lr-15 trans-04">
                                     Shop Now
                                 </a>
                             </div>
@@ -281,7 +249,7 @@
                             </div>
 
                             <div class="layer-slick1 animated visible-false" data-appear="slideInUp" data-delay="1600">
-                                <a href="product.html" class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn2 p-lr-15 trans-04">
+                                <a href="@Url.Action("Mobilelist","Produit")" class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn2 p-lr-15 trans-04">
                                     Shop Now
                                 </a>
                             </div>
@@ -305,7 +273,7 @@
                             </div>
 
                             <div class="layer-slick1 animated visible-false" data-appear="rotateIn" data-delay="1600">
-                                <a href="product.html" class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn2 p-lr-15 trans-04">
+                                <a href="@Url.Action("Mobilelist","Produit")" class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn2 p-lr-15 trans-04">
                                     Shop Now
                                 </a>
                             </div>
@@ -329,7 +297,7 @@
                             </div>
 
                             <div class="layer-slick1 animated visible-false" data-appear="rotateIn" data-delay="1600">
-                                <a href="product.html" class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn2 p-lr-15 trans-04">
+                                <a href="@Url.Action("ADSLlist","Produit")" class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn2 p-lr-15 trans-04">
                                     Shop Now
                                 </a>
                             </div>
@@ -366,59 +334,7 @@
     </section>
 
   
-    <!-- Banner -->
-    <div class="sec-banner bg0 p-t-95 p-b-55">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 p-b-30 m-lr-auto">
-                    <!-- Block1 -->
-                    <div class="block1 wrap-pic-w">
-                        <img src=@Url.Content("/Content/Frontend/images/iphone.jpeg") alt="">
 
-                        <a href="product.html" class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
-                           
-                            <div class="block1-txt-child2 p-b-4 trans-05">
-                                <div class="block1-link stext-101 cl0 trans-09">
-                                   sMARTPHONES AND TABLETS
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="col-md-6 p-b-30 m-lr-auto">
-                    <!-- Block1 -->
-                    <div class="block1 wrap-pic-w">
-                        <img src=@Url.Content("/Content/Frontend/images/ADSL-BANNER.jpg") alt="">
-
-                        <a href="product.html" class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
-                            <div class="block1-txt-child1 flex-col-l">
-                              
-                            </div>
-
-                            <div class="block1-txt-child2 p-b-4 trans-05">
-                                <div class="block1-link stext-101 cl0 trans-09">
-                                    ADSL and FLYBOX
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-4 p-b-30 m-lr-auto">
-                    <!-- Block1 -->
-                 
-                </div>
-
-                <div class="col-md-6 col-lg-4 p-b-30 m-lr-auto">
-                    <!-- Block1 -->
-               
-                </div>
-
-              
-            </div>
-        </div>
-    </div>
 
 
     <!-- Product -->
@@ -429,15 +345,7 @@
         
 
             <!-- Pagination -->
-            <div class="flex-c-m flex-w w-full p-t-38">
-                <a href="#" class="flex-c-m how-pagination1 trans-04 m-all-7 active-pagination1">
-                    1
-                </a>
-
-                <a href="#" class="flex-c-m how-pagination1 trans-04 m-all-7">
-                    2
-                </a>
-            </div>
+            
        
     </section>
 
@@ -454,25 +362,25 @@
                     <ul>
                         <li class="p-b-10">
                             <a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-                                Women
+                                Smartphones
                             </a>
                         </li>
 
                         <li class="p-b-10">
                             <a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-                                Men
+                                Phones
                             </a>
                         </li>
 
                         <li class="p-b-10">
                             <a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-                                Shoes
+                                Accessories
                             </a>
                         </li>
 
                         <li class="p-b-10">
                             <a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-                                Watches
+                                ADSL
                             </a>
                         </li>
                     </ul>

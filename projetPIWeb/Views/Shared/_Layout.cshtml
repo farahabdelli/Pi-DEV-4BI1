@@ -30,6 +30,127 @@
         </div>
     </div>
     <div class="container body-content">
+        <!-- Sidebar -->
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+            <!-- Sidebar - Brand -->
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+                <div class="sidebar-brand-icon rotate-n-15">
+                    <i class="fas fa-laugh-wink"></i>
+                </div>
+                <div class="sidebar-brand-text mx-3">Operators administration</div>
+            </a>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider my-0">
+            <!-- Nav Item - Dashboard -->
+            <li class="nav-item">
+                <a class="nav-link" href="index.html">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Dashboard</span>
+                </a>
+            </li>
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+            <!-- Heading -->
+            <div class="sidebar-heading">
+                Interface
+            </div>
+            <!-- Nav Item - Pages Collapse Menu -->
+
+            <li class="nav-item">
+                <a href=" @Url.Action("ProductList", "Produit")" class="nav-link collapsed">
+                    <i class="fas fa-list"></i>
+                    <span>Products</span>
+                </a>
+            </li>
+
+
+
+            <!-- Nav Item - Utilities Collapse Menu -->
+            <li class="nav-item">
+                <a href=" @Url.Action("Index", "Stores")" class="nav-link collapsed">
+                    <i class="fa fa-calculator"></i>
+                    <span>Stores</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href=" @Url.Action()" class="nav-link collapsed">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>Commands</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href=" @Url.Action()" class="nav-link collapsed">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>Promotions</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href=" @Url.Action()" class="nav-link collapsed">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>Offers</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href=" @Url.Action()" class="nav-link collapsed">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>Packs</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href=" @Url.Action()" class="nav-link collapsed">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>Claims</span>
+                </a>
+            </li>
+
+
+
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+            <!-- Heading -->
+            <div class="sidebar-heading">
+                Statistics
+            </div>
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item active">
+                <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
+                    <i class="fas fa-fw fa-folder"></i>
+                    <span>Products</span>
+                </a>
+                <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
+                    <i class="fas fa-fw fa-folder"></i>
+                    <span>Stores</span>
+                </a>
+                <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
+                    <i class="fas fa-fw fa-folder"></i>
+                    <span>Commands</span>
+                </a>
+                <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
+                    <i class="fas fa-fw fa-folder"></i>
+                    <span>Promotions</span>
+                </a>
+                <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
+                    <i class="fas fa-fw fa-folder"></i>
+                    <span>Offers</span>
+                </a>
+                <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
+                    <i class="fas fa-fw fa-folder"></i>
+                    <span>Claims</span>
+                </a>
+
+            </li>
+            <!-- Nav Item - Charts -->
+            <!-- Nav Item - Tables -->
+            <!-- Divider -->
+            <hr class="sidebar-divider d-none d-md-block">
+            <!-- Sidebar Toggler (Sidebar) -->
+            <div class="text-center d-none d-md-inline">
+                <button class="rounded-circle border-0" id="sidebarToggle"></button>
+            </div>
+        </ul>
+        <!-- End of Sidebar -->
         @RenderBody()
         <hr />
         <footer>

@@ -14,7 +14,7 @@ namespace Domaine
         [Required(ErrorMessage = "Entrer le nom de produit")]
         [StringLength(25, ErrorMessage = "nom ne doit pas dépasser 25")]
         [MaxLength(50)]
-        [Display(Name = "Name")]
+        [Display(Name = "Store")]
         public string Nom { get; set; }
         [Required(ErrorMessage = "Entrer la ville  du boutique")]
         [StringLength(25, ErrorMessage = "ville ne doit pas dépasser 25")]
@@ -38,6 +38,7 @@ namespace Domaine
         [Display(Name = "Closes at")]
         public string heure_ferm { get; set; }
 
+        public virtual ICollection<ProductStore> ProductStores { get; set; }
         //  public virtual ICollection<Product> Produits { get; set; }
     }
 }

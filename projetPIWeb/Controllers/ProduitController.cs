@@ -7,6 +7,7 @@ using projetPIWeb.Models;
 using System.IO;
 using Services;
 using PagedList;
+using PagedList.Mvc;
 using System;
 
 
@@ -20,28 +21,27 @@ namespace projetPIWeb.Controllers
         ServiceBrand sb = new ServiceBrand();
         ServiceNetwork sn = new ServiceNetwork();
         // GET: Product
-        public ActionResult ProductList(string sortOrder)
+  
+        public ActionResult ProductList(string sortOrder, int? page)
         {
-            ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "nom_desc" : "";
-
-            List<Product> listproduit = Session["Produits"] as List<Product>;
-            var produits = sp.GetMany();
-
+            ViewBag.CurrentSort = sortOrder;
+            ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+            var products = sp.GetMany();
             switch (sortOrder)
             {
                 case "name_desc":
-                    produits = produits.OrderByDescending(s => s.Nom);
+                    products = products.OrderByDescending(s => s.Nom);
+                    break;
+                default:
+                    products = products.OrderByDescending(s => s.Nom);
                     break;
 
-                default:
-                    produits = produits.OrderBy(s => s.Nom);
-                    break;
             }
-            return View(produits);
+            return View(products.ToPagedList(page ?? 1, 3));
 
         }
 
-    
+
 
         // POST: Product
         [HttpPost]
@@ -179,14 +179,25 @@ namespace projetPIWeb.Controllers
 
         // GET: Product front
 
-        public ActionResult Index2()
+        public ActionResult HomeFront(string sortOrder, int? page)
         {
-            
+            ViewBag.CurrentSort = sortOrder;
+            ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
             var products = sp.GetMany();
+            switch (sortOrder)
+            {
+                case "name_desc":
+                    products = products.OrderByDescending(s => s.Nom);
+                    break;
+                default:
+                    products = products.OrderByDescending(s => s.Nom);
+                    break;
 
-            return View(products);
+            }
+            return View(products.ToPagedList(page ?? 1 , 3));
 
         }
+
         public ActionResult Mobilelist()
         {
             var f = sp.mobile();

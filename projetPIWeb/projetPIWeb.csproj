@@ -177,6 +177,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CommandeLigneController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ProductStoresController.cs" />
@@ -184,30 +185,6 @@
     <Compile Include="Controllers\StoresController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201910291540026_model.cs" />
-    <Compile Include="Migrations\201910291540026_model.Designer.cs">
-      <DependentUpon>201910291540026_model.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201910291810352_farahWEB.cs" />
-    <Compile Include="Migrations\201910291810352_farahWEB.Designer.cs">
-      <DependentUpon>201910291810352_farahWEB.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201910311642232_farah.cs" />
-    <Compile Include="Migrations\201910311642232_farah.Designer.cs">
-      <DependentUpon>201910311642232_farah.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201910311646244_fffff.cs" />
-    <Compile Include="Migrations\201910311646244_fffff.Designer.cs">
-      <DependentUpon>201910311646244_fffff.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201910312034120_productstores.cs" />
-    <Compile Include="Migrations\201910312034120_productstores.Designer.cs">
-      <DependentUpon>201910312034120_productstores.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201910312104386_data.cs" />
-    <Compile Include="Migrations\201910312104386_data.Designer.cs">
-      <DependentUpon>201910312104386_data.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -412,7 +389,9 @@
     <Content Include="Scripts\slick.min.js" />
     <Content Include="Scripts\sweetalert.min.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -471,6 +450,9 @@
     <Content Include="Views\ProductStores\Details.cshtml" />
     <Content Include="Views\ProductStores\Edit.cshtml" />
     <Content Include="Views\ProductStores\Index.cshtml" />
+    <Content Include="Views\CommandeLigne\Index.cshtml" />
+    <Content Include="Views\CommandeLigne\Create.cshtml" />
+    <Content Include="Views\CommandeLigne\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -497,26 +479,6 @@
       <Project>{bb876b03-b0df-4093-8725-a541df11461b}</Project>
       <Name>Services</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201910291540026_model.resx">
-      <DependentUpon>201910291540026_model.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201910291810352_farahWEB.resx">
-      <DependentUpon>201910291810352_farahWEB.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201910311642232_farah.resx">
-      <DependentUpon>201910311642232_farah.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201910311646244_fffff.resx">
-      <DependentUpon>201910311646244_fffff.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201910312034120_productstores.resx">
-      <DependentUpon>201910312034120_productstores.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201910312104386_data.resx">
-      <DependentUpon>201910312104386_data.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -14,7 +14,7 @@ namespace Services
         private static DatabaseFactory dbf = new DatabaseFactory();
 
         private static IUnitOfWork uow = new UnitOfWork(dbf);
-        public ServiceCommandeLigne(IUnitOfWork utwk) : base(utwk)
+        public ServiceCommandeLigne() : base(uow)
         {
         
         }

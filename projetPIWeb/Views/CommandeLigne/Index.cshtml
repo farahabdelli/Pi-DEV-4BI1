@@ -1,0 +1,52 @@
+﻿@model IEnumerable<Domaine.CommandeLigne>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_CustomLayoutFrontend.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.quantité)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.montantotal)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProduitId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.idcom)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.quantité)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.montantotal)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProduitId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.idcom)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.idcomlig }) |
+            @Html.ActionLink("Details", "Details", new { id=item.idcomlig }) |
+            <a href="@Url.Action("Delete", "CommandeLigne", new { id=item.idcomlig })">Delete</a>
+        </td>
+    </tr>
+}
+
+</table>

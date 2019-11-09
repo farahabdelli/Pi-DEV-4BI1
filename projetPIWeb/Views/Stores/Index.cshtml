@@ -12,8 +12,16 @@
 <div style="text-align:right">
     
     <input type="button" value="Create new Store" onclick="location.href='@Url.Action("CreateStore", "Stores")'" class="btn btn-primary" />
-
+   
 </div><br />
+@using (Html.BeginForm())
+{
+    <div>
+        <center><div><!-- Serach  : Html.TextBox("SearchString")--> <input type="text" placeholder="Search" id="txt" /> </div></center>
+
+    </div>
+}
+<br />
 <table class="table">
     <tr>
         <th>
@@ -79,3 +87,32 @@
 
 </table>
 @Html.PagedListPager(Model, Page => Url.Action("Index", new { Page })) 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+    $("#txt").on("keyup", function () {
+        var txtenter = $(this).val();
+        $("table tr").each(function(results){
+            if (results!==0)
+            {
+                var id = $(this).find("td:nth-child(1)").text();
+                var id2 = $(this).find("td:nth-child(2)").text();
+                var id3 = $(this).find("td:nth-child(6)").text();
+                if ((id.indexOf(txtenter) !== 0 && id.toLowerCase().indexOf(txtenter.toLowerCase())<0) &
+                    (id2.indexOf(txtenter) !== 0 && id2.toLowerCase().indexOf(txtenter.toLowerCase())<0) &
+                    (id3.indexOf(txtenter) !== 0 && id3.toLowerCase().indexOf(txtenter.toLowerCase())<0))
+                {
+                    $(this).hide();
+
+                }
+                else
+                {
+                    $(this).show();
+                }
+
+
+
+
+            }
+        })
+    })
+</script>

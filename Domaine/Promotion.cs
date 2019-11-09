@@ -12,8 +12,11 @@ namespace Domaine
     {
         [Key]
         public int PromotionId { get; set; }
+        [DataType(DataType.MultilineText)]
         public string description { get; set; }
+        [DataType(DataType.Date)]
         public DateTime start_date { get; set; }
+        [DataType(DataType.Date)]
         public DateTime end_date { get; set; }
         public float percentage { get; set; }
 

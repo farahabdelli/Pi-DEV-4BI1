@@ -10,6 +10,7 @@ using Domaine;
 using projetPIWeb.Models;
 using Services;
 using PagedList;
+using System.Diagnostics;
 
 namespace projetPIWeb.Controllers
 {
@@ -19,11 +20,16 @@ namespace projetPIWeb.Controllers
 
         // GET: Stores
 
-        public ActionResult Index(string sortOrder, int? page)
+        public ActionResult Index(string sortOrder, int? page,String SearchString)
         {
             ViewBag.CurrentSort = sortOrder;
             ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
             var s = sb.GetMany();
+            if (!String.IsNullOrEmpty(SearchString))
+            {
+                s = s.Where(ss => ss.Nom.Contains(SearchString)
+                                       || ss.Ville.Contains(SearchString) || ss.type.Contains(SearchString));
+            }
             switch (sortOrder)
             {
                 case "name_desc":
@@ -34,7 +40,7 @@ namespace projetPIWeb.Controllers
                     break;
 
             }
-            return View(s.ToPagedList(page ?? 1, 1));
+            return View(s.ToPagedList(page ?? 1, 3));
 
         }
 
@@ -95,15 +101,25 @@ namespace projetPIWeb.Controllers
 
         // POST: Produit/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection, StoreModel pm)
+        public ActionResult Edit(int id, FormCollection collection, Store s)
         {
-
-
             try
             {
-                // TODO: Add update logic here
-                // sp.Update(pm);
-                return RedirectToAction("ProductList");
+                Store st = sb.GetById(id);
+                st.Nom = s.Nom;
+                st.Adresse = s.Adresse;
+                st.Description = s.Description;
+                st.Ville = s.Ville;
+                st.type = s.type;
+                st.tel = s.tel;
+                st.heure_ferm = s.heure_ferm;
+                st.heure_ouv = s.heure_ouv;
+                Debug.WriteLine(st);
+                sb.Update(st);
+                sb.Commit();
+
+
+                return RedirectToAction("Index");
             }
             catch
             {
@@ -137,6 +153,30 @@ namespace projetPIWeb.Controllers
             {
                 return View();
             }
+        }
+
+        public ActionResult StoreFront(string sortOrder, int? page, String SearchString)
+        {
+            ViewBag.CurrentSort = sortOrder;
+            ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+            var s = sb.GetMany();
+            if (!String.IsNullOrEmpty(SearchString))
+            {
+                s = s.Where(ss => ss.Nom.Contains(SearchString)
+                                       || ss.Ville.Contains(SearchString) || ss.type.Contains(SearchString));
+            }
+            switch (sortOrder)
+            {
+                case "name_desc":
+                    s = s.OrderByDescending(ss => ss.Nom);
+                    break;
+                default:
+                    s = s.OrderByDescending(ss => ss.Nom);
+                    break;
+
+            }
+            return View(s.ToPagedList(page ?? 1, 3));
+
         }
 
     }

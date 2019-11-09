@@ -24,5 +24,8 @@ namespace projetPIWeb.Models
         public System.Data.Entity.DbSet<Domaine.Product> Products { get; set; }
 
         public System.Data.Entity.DbSet<Domaine.Store> Stores { get; set; }
+        public System.Data.Entity.DbSet<Domaine.Offer> Offers { get; set; }
+        public System.Data.Entity.DbSet<Domaine.Pack> Packs { get; set; }
+        public System.Data.Entity.DbSet<Domaine.Promotion> Promotions { get; set; }
     }
 }

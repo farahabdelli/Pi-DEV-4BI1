@@ -6,7 +6,9 @@
 }
 
 <h2>Product Details</h2>
-
+<div  style="text-align:right">
+   <right>@Html.ActionLink("Edit", "Edit", new { id = Model.ProduitId })</right>
+</div>
 <div>
 
     <hr />
@@ -82,7 +84,8 @@
 
     </dl>
 </div>
+ 
 <p>
-
+   
     <input type="button" value="Back to List" onclick="location.href='@Url.Action("ProductList", "Produit")'" class="btn btn-dark" />
 </p>

@@ -28,6 +28,7 @@ namespace Data
         public DbSet<Pack> Packs { get; set; }
         public DbSet<Promotion> Promotions { get; set; }
         public DbSet<Offer> Offers { get; set; }
-
+        public DbSet<Brand> Brand { get; set; }
+      
     }
 }

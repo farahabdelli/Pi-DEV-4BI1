@@ -65,7 +65,11 @@
     <Compile Include="IServiceCommande.cs" />
     <Compile Include="IServiceCommandeLigne.cs" />
     <Compile Include="IServiceNetwork.cs" />
+    <Compile Include="IServiceOffer.cs" />
+    <Compile Include="IServicePack.cs" />
+    <Compile Include="IServiceProductStores.cs" />
     <Compile Include="IServiceProduit.cs" />
+    <Compile Include="IServicePromotion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ServiceBills.cs" />
     <Compile Include="ServiceBrand.cs" />
@@ -75,7 +79,11 @@
     <Compile Include="ServiceCommande.cs" />
     <Compile Include="ServiceCommandeLigne.cs" />
     <Compile Include="ServiceNetwork.cs" />
+    <Compile Include="ServiceOffer.cs" />
+    <Compile Include="ServicePack.cs" />
+    <Compile Include="ServiceProductStores.cs" />
     <Compile Include="ServiceProduit.cs" />
+    <Compile Include="ServicePromotion.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Data\Data.csproj">

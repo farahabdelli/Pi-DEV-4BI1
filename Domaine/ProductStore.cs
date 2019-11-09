@@ -18,5 +18,7 @@ namespace Domaine
         public int BoutiqueId { get; set; }
         public virtual Product Productt { get; set; }
         public virtual Store Store { get; set; }
+
+        public int count { get; set; }
     }
 }

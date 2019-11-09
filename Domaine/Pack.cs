@@ -12,6 +12,7 @@ namespace Domaine
     {
         [Key]
         public int PackId { get; set; }
+        [Range(0, int.MaxValue)]
         public int quantity { get; set; }
 
         [ForeignKey("OfferId")]

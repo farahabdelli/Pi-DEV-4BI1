@@ -11,8 +11,21 @@
 <h2>List of products</h2>
 <div style="text-align:right">
     <input type="button" value="Create new Product" onclick="location.href='@Url.Action("CreateProduct", "Produit")'" class="btn btn-primary" />
-</div>
+    <input type="button" value="View dashboard" onclick="location.href='@Url.Action("Dashboard1", "Produit")'" class="btn btn-primary" />
+</div> <br />
+<div style="text-align:right">
+   
+    </div>
 <br /><br />
+
+@using (Html.BeginForm())
+{
+    <div >
+        <center><div><!-- Serach  : Html.TextBox("SearchString")--> <input type="text" placeholder="Search" id="txtsearch" /> </div></center>
+       
+    </div>
+}
+<br />
 
 <table class="table">
     <tr>
@@ -90,7 +103,40 @@
             </td>
         </tr>
                     }
+   
 
 </table>
-            @Html.PagedListPager(Model, Page => Url.Action("ProductList", new { Page })) 
+<div style="text-align:right">
+    <input type="button" value="Add Product to store" onclick="location.href='@Url.Action("Create", "ProductStores")'" class="btn btn-primary" />
+</div>
+           <center>@Html.PagedListPager(Model, Page => Url.Action("ProductList", new { Page })) </center>
         
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+    $("#txtsearch").on("keyup", function () {
+        var txtenter = $(this).val();
+        $("table tr").each(function(results){
+            if (results!==0)
+            {
+                var id = $(this).find("td:nth-child(1)").text();
+                var id2 = $(this).find("td:nth-child(3)").text();
+                var id3 = $(this).find("td:nth-child(4)").text();
+                if ((id.indexOf(txtenter) !== 0 && id.toLowerCase().indexOf(txtenter.toLowerCase())<0) &
+                    (id2.indexOf(txtenter) !== 0 && id2.toLowerCase().indexOf(txtenter.toLowerCase())<0) &
+                    (id3.indexOf(txtenter) !== 0 && id3.toLowerCase().indexOf(txtenter.toLowerCase())<0))
+                {
+                    $(this).hide();
+
+                }
+                else
+                {
+                    $(this).show();
+                }
+
+              
+
+
+            }
+        })
+    })
+</script>

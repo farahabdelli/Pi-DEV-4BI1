@@ -12,114 +12,122 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6 p-b-30 m-lr-auto">
-                <!-- Block1 -->
-                <div class="block1 wrap-pic-w">
-                    <img src=@Url.Content("/Content/Frontend/images/iphone.jpeg") alt="">
 
-                    <a href="product.html" class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
 
-                        <div class="block1-txt-child2 p-b-4 trans-05">
-                            <div class="block1-link stext-101 cl0 trans-09">
-                                sMARTPHONES AND TABLETS
-                            </div>
-                        </div>
-                    </a>
+
+
+                <div class="col-md-6 col-lg-4 p-b-30 m-lr-auto">
+                    <!-- Block1 -->
+
                 </div>
-            </div>
 
-            <div class="col-md-6 p-b-30 m-lr-auto">
-                <!-- Block1 -->
-                <div class="block1 wrap-pic-w">
-                    <img src=@Url.Content("/Content/Frontend/images/ADSL-BANNER.jpg") alt="">
+                <div class="col-md-6 col-lg-4 p-b-30 m-lr-auto">
+                    <!-- Block1 -->
 
-                    <a href="product.html" class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
-                        <div class="block1-txt-child1 flex-col-l">
-
-                        </div>
-
-                        <div class="block1-txt-child2 p-b-4 trans-05">
-                            <div class="block1-link stext-101 cl0 trans-09">
-                                ADSL and FLYBOX
-                            </div>
-                        </div>
-                    </a>
                 </div>
-            </div>
 
-            <div class="col-md-6 col-lg-4 p-b-30 m-lr-auto">
-                <!-- Block1 -->
 
             </div>
-
-            <div class="col-md-6 col-lg-4 p-b-30 m-lr-auto">
-                <!-- Block1 -->
-
-            </div>
-
-
         </div>
     </div>
-</div>
-<br />
+    <br />
+    <!--liste par la-->
 
 
 
-@using (Html.BeginForm())
-{
-    <div>
-        <center><div> Serach by name : @Html.TextBox("SearchString")    </div></center>
-        <input type="submit" value="Search" id="submit" />
-    </div>
-}
-<div class="row product-container">
-    @foreach (var item in Model)
+
+
+    <h1>Our products</h1><br /><br />
+    <!-- <center>Html.DropDownList("categories", new List<SelectListItem>
     {
+       new SelectListItem{ Text="Smartphones", Value = "1" },
+       new SelectListItem{ Text="Accessories", Value = "2" },
+       new SelectListItem{ Text="ADSL", Value = "3" },
+       new SelectListItem{ Text="FlyBox", Value = "4" },
+       new SelectListItem{ Text="FixBox", Value = "5" },
+       new SelectListItem{ Text="Tablets", Value = "6" },
 
-        <div class="col-md-3 col-sm-3 col-xs-6" style="margin-bottom:8px">
-            <div class="thumbnail product-item" style="height:300px">
-                @{string path = "~/Content/Upload/" + item.Image;}
+    }, new { htmlAttributes = new { class = "form-control" } })
+    <br /><br /></center>-->
 
-                <img class="img-responsive" title="Click to View Product detail"
-                     style="cursor:pointer;height:160px;width:100%"
-                     src="@Url.Content(path)" width="80" height="80" />
-              <center><a>@Html.ActionLink("Quick View", "DetailsFront", new { id = item.ProduitId })</a></center>
 
-                <div class="caption">
-                    <h5>@Html.DisplayFor(modelItem => item.Nom)</h5>
-                    
-                     
-                    <p>@Html.DisplayFor(modelItem => item.Prix)</p>
-                    <p>
-                        @if (item.Quantite > 0)
-                        {
-                        <p>Available</p>
+    <tr>
+        <th>
+            @Html.ActionLink("Sort A-Z Z-A", "HomeFront",
+                new
+                {
+                    SortOrder = ViewBag.NameSortParm,
+                    Selectedcat = ViewBag.Selectedcat
 
-                        }
-                        else
-                        {
-                            <p>Not Available</p>
-                        }
-                        </p>
+                })
+        </th>
+       
+      
+       
 
-                    </div>
+        <div style="text-align:center">
+    
+    @Html.DropDownList("Selectedcat",
+                new SelectList(ViewBag.Uniquecat, "Value", "Text", ViewBag.Selectedcat),
+                "Categorie", new { onChange = "this.form.onsubmit();" })
+    </div>
 
-                    <div>
 
-                      
 
+
+    <div class="row product-container">
+
+        @foreach (var item in Model)
+        {
+            // Html.DropDownListFor(model => model.C, item.Categorie.Nom, new { htmlAttributes = new { @class = "form-control" } })
+
+
+            <div class="col-md-3 col-sm-3 col-xs-6" style="margin-bottom:8px">
+                <div class="thumbnail product-item" style="height:300px">
+                    @{string path = "~/Content/Upload/" + item.Image;}
+
+                    <img class="img-responsive" title="Click to View Product detail"
+                         style="cursor:pointer;height:160px;width:100%"
+                         src="@Url.Content(path)" width="80" height="80" />
+                    <center><a>@Html.ActionLink("Quick View", "DetailsFront", new { id = item.ProduitId })</a></center>
+
+                    <div class="caption">
+                        <h5>@Html.DisplayFor(modelItem => item.Nom)</h5>
+
+
+                        <p>@Html.DisplayFor(modelItem => item.Prix)</p>
+                        <p>
+                            @if (item.Quantite > 0)
+                            {
+                            <p>Available</p>
+
+                            }
+                            else
+                            {
+                                <p>Not Available</p>
+                            }
+                            </p>
+
+                        </div>
+
+                        <div>
+
+
+
+                        </div>
                     </div>
                 </div>
-            </div>
-           
-                    }
+
+                        }
 
     </div>
 
-   
-<div class="flex-c-m flex-w w-full p-t-38 pagination-sm">
-   
-        @Html.PagedListPager(Model, Page => Url.Action("Index2", new { Page }))
-   
 
-   
-</div>
+
+    <div class="flex-c-m flex-w w-full p-t-38 pagination-sm">
+
+        @Html.PagedListPager(Model, Page => Url.Action("HomeFront", new { Page }))
+
+
+
+    </div>

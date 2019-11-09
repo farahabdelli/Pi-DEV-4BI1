@@ -1,0 +1,64 @@
+﻿@model IEnumerable<Domaine.Promotion>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_CustomLayoutBackend2.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Offer.title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Pack.PackId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.start_date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.end_date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.percentage)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Offer.title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Pack.PackId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.start_date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.end_date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.percentage)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.PromotionId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.PromotionId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.PromotionId })
+        </td>
+    </tr>
+}
+
+</table>

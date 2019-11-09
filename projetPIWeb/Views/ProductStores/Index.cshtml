@@ -8,7 +8,8 @@
 <h2></h2>
 
 <div style="text-align:right">
-    <input type="button" value="Create new Product" onclick="location.href='@Url.Action("Create", "ProductStores")'" class="btn btn-primary" />
+    <input type="button" value="Add Product to store" onclick="location.href='@Url.Action("Create", "ProductStores")'" class="btn btn-primary" />
+    <input type="button" value="List of products" onclick="location.href='@Url.Action("ProductList", "Produit")'" class="btn btn-primary" />
 </div>
 <br /><br />
 <table class="table">
@@ -20,6 +21,8 @@
         <th>
             @Html.DisplayNameFor(model => model.Productt.Nom)
         </th>
+       
+
         <th></th>
     </tr>
 
@@ -32,9 +35,10 @@
         <td>
             @Html.DisplayFor(modelItem => item.Productt.Nom)
         </td>
+      
         <td>
-            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+           
+         
         </td>
     </tr>
 }

@@ -12,19 +12,28 @@ namespace Domaine
     {
         [Key]
         public int OfferId { get; set; }
+        [Required(ErrorMessage = "insert title")]
+        [StringLength(25, ErrorMessage = "title must not exceed 50")]
+        [MaxLength(50)]
         public string title { get; set; }
+        [DataType(DataType.MultilineText)]
         public string description { get; set; }
         public string picture { get; set; }
-        public string category { get; set; }
+        public String category { get; set; }
+        [DataType(DataType.Date)]
         public DateTime start_date { get; set; }
+        [DataType(DataType.Date)]
         public DateTime end_date { get; set; }
 
+
         [ForeignKey("ProduitId")]
-        public virtual Product Produit { get; set; }
+        public virtual Product Product { get; set; }
         public int? ProduitId { get; set; }
         public virtual ICollection<Promotion> Promotions { get; set; }
 
-       // public int MyProperty { get; set; }
+
+        // public int MyProperty { get; set; }
+
 
     }
 }

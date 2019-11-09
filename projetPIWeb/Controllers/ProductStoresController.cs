@@ -8,18 +8,22 @@ using System.Web;
 using System.Web.Mvc;
 using Domaine;
 using projetPIWeb.Models;
+using Services;
 
 namespace projetPIWeb.Controllers
 {
     public class ProductStoresController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
+        ServiceProductStores sps = new ServiceProductStores();
 
         // GET: ProductStores
         public ActionResult Index()
         {
-            var productStores = db.ProductStores.Include(p => p.Productt).Include(p => p.Store);
-            return View(productStores.ToList());
+            var s = sps.GetMany().OrderBy(p => p.Store.Nom);           
+          //  var reports = db.ProductStores.Include(p => p.Productt).Include(p => p.Store).GroupBy(p => p.Store)
+          
+            return View(s);
         }
 
         // GET: ProductStores/Details/5
@@ -34,6 +38,7 @@ namespace projetPIWeb.Controllers
             {
                 return HttpNotFound();
             }
+            
             return View(productStore);
         }
 

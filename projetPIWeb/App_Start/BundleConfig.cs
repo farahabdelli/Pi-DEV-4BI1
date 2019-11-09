@@ -28,11 +28,14 @@ namespace projetPIWeb
 
 
             #region TemplateBack Design
-            bundles.Add(new ScriptBundle("~/template/Backend/css").Include(
+            bundles.Add(new StyleBundle("~/template/Backend/css").Include(
                         "~/Content/Backend/css/all.min.css",
                         "~/Content/Backend/css/font-awesome.css",
                            "~/Content/Backend/css/all.css",
                          "~/Content/Backend/css/sb-admin-2.min.css"));
+
+            bundles.Add(new StyleBundle("~/Content/css/bootstrap").Include(
+                "~/Content/bootstrap.min.css", new CssRewriteUrlTransform()));
 
 
             bundles.Add(new ScriptBundle("~/template/Backend/js").Include(
@@ -48,7 +51,7 @@ namespace projetPIWeb
             #endregion
 
             #region TemplateFront Design
-            bundles.Add(new ScriptBundle("~/template/Frontend/css").Include(
+            bundles.Add(new StyleBundle("~/template/Frontend/css").Include(
                         "~/Content/Frontend/css/bootstrap.min.css",
                         "~/Content/Frontend/css/all.css",
                          "~/Content/Frontend/css/font-awesome.min.css",

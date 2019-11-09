@@ -179,43 +179,33 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\OffersController.cs" />
+    <Compile Include="Controllers\PacksController.cs" />
     <Compile Include="Controllers\ProductStoresController.cs" />
     <Compile Include="Controllers\ProduitController.cs" />
+    <Compile Include="Controllers\PromotionsController.cs" />
     <Compile Include="Controllers\StoresController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201910291540026_model.cs" />
-    <Compile Include="Migrations\201910291540026_model.Designer.cs">
-      <DependentUpon>201910291540026_model.cs</DependentUpon>
+    <Compile Include="Migrations\201911091005325_migra.cs" />
+    <Compile Include="Migrations\201911091005325_migra.Designer.cs">
+      <DependentUpon>201911091005325_migra.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201910291810352_farahWEB.cs" />
-    <Compile Include="Migrations\201910291810352_farahWEB.Designer.cs">
-      <DependentUpon>201910291810352_farahWEB.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201910311642232_farah.cs" />
-    <Compile Include="Migrations\201910311642232_farah.Designer.cs">
-      <DependentUpon>201910311642232_farah.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201910311646244_fffff.cs" />
-    <Compile Include="Migrations\201910311646244_fffff.Designer.cs">
-      <DependentUpon>201910311646244_fffff.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201910312034120_productstores.cs" />
-    <Compile Include="Migrations\201910312034120_productstores.Designer.cs">
-      <DependentUpon>201910312034120_productstores.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201910312104386_data.cs" />
-    <Compile Include="Migrations\201910312104386_data.Designer.cs">
-      <DependentUpon>201910312104386_data.cs</DependentUpon>
+    <Compile Include="Migrations\201911091119413_emna.cs" />
+    <Compile Include="Migrations\201911091119413_emna.Designer.cs">
+      <DependentUpon>201911091119413_emna.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\OfferModels.cs" />
+    <Compile Include="Models\PackModel.cs" />
     <Compile Include="Models\ProductStoreModel.cs" />
     <Compile Include="Models\ProduitModel.cs" />
     <Compile Include="Models\projetPIWebContext.cs" />
+    <Compile Include="Models\PromotionModel.cs" />
     <Compile Include="Models\StoreModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -224,12 +214,15 @@
     <Content Include="Content\Backend\css\all.css" />
     <Content Include="Content\Backend\css\font-awesome.min.css" />
     <Content Include="Content\Backend\css\fontawesome.css" />
+    <Content Include="Content\Backend\img\product.png" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Backend\css\all.min.css" />
     <Content Include="Content\Backend\css\sb-admin-2.css" />
     <Content Include="Content\Backend\css\sb-admin-2.min.css" />
     <Content Include="Content\Backend\img\undraw_posting_photo.svg" />
+    <Content Include="Content\Chart.css" />
+    <Content Include="Content\Chart.min.css" />
     <Content Include="Content\Frontend\css\all.css" />
     <Content Include="Content\Frontend\css\animate.css" />
     <Content Include="Content\Frontend\css\animsition.min.css" />
@@ -339,6 +332,7 @@
     <Content Include="Content\PagedList.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\font-awesome.min.css" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="fonts\Material-Design-Iconic-Font.svg" />
     <Content Include="Global.asax" />
@@ -374,7 +368,17 @@
     <Content Include="fonts\Material-Design-Iconic-Font.ttf" />
     <Content Include="fonts\Material-Design-Iconic-Font.woff" />
     <Content Include="fonts\Material-Design-Iconic-Font.woff2" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="webfonts\fa-brands-400.svg" />
+    <Content Include="webfonts\fa-regular-400.svg" />
+    <Content Include="webfonts\fa-solid-900.svg" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\Chart.js" />
+    <Content Include="Scripts\Chart.min.js" />
     <Content Include="Scripts\daterangepicker.js" />
     <Content Include="Scripts\all.min.js" />
     <Content Include="Scripts\demo\bootstrap.min.js" />
@@ -471,6 +475,36 @@
     <Content Include="Views\ProductStores\Details.cshtml" />
     <Content Include="Views\ProductStores\Edit.cshtml" />
     <Content Include="Views\ProductStores\Index.cshtml" />
+    <Content Include="Views\Produit\Dashboard1.cshtml" />
+    <Content Include="webfonts\fa-brands-400.eot" />
+    <Content Include="webfonts\fa-brands-400.ttf" />
+    <Content Include="webfonts\fa-brands-400.woff" />
+    <Content Include="webfonts\fa-brands-400.woff2" />
+    <Content Include="webfonts\fa-regular-400.eot" />
+    <Content Include="webfonts\fa-regular-400.ttf" />
+    <Content Include="webfonts\fa-regular-400.woff" />
+    <Content Include="webfonts\fa-regular-400.woff2" />
+    <Content Include="webfonts\fa-solid-900.eot" />
+    <Content Include="webfonts\fa-solid-900.ttf" />
+    <Content Include="webfonts\fa-solid-900.woff" />
+    <Content Include="webfonts\fa-solid-900.woff2" />
+    <Content Include="Views\Shared\_ContactLayout.cshtml" />
+    <Content Include="Views\Stores\StoreFront.cshtml" />
+    <Content Include="Views\Offers\Index.cshtml" />
+    <Content Include="Views\Offers\Details.cshtml" />
+    <Content Include="Views\Offers\Create.cshtml" />
+    <Content Include="Views\Offers\Edit.cshtml" />
+    <Content Include="Views\Offers\Delete.cshtml" />
+    <Content Include="Views\Packs\Create.cshtml" />
+    <Content Include="Views\Packs\Delete.cshtml" />
+    <Content Include="Views\Packs\Details.cshtml" />
+    <Content Include="Views\Packs\Edit.cshtml" />
+    <Content Include="Views\Packs\Index.cshtml" />
+    <Content Include="Views\Promotions\Create.cshtml" />
+    <Content Include="Views\Promotions\Delete.cshtml" />
+    <Content Include="Views\Promotions\Details.cshtml" />
+    <Content Include="Views\Promotions\Edit.cshtml" />
+    <Content Include="Views\Promotions\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -499,23 +533,11 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201910291540026_model.resx">
-      <DependentUpon>201910291540026_model.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201911091005325_migra.resx">
+      <DependentUpon>201911091005325_migra.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201910291810352_farahWEB.resx">
-      <DependentUpon>201910291810352_farahWEB.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201910311642232_farah.resx">
-      <DependentUpon>201910311642232_farah.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201910311646244_fffff.resx">
-      <DependentUpon>201910311646244_fffff.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201910312034120_productstores.resx">
-      <DependentUpon>201910312034120_productstores.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201910312104386_data.resx">
-      <DependentUpon>201910312104386_data.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201911091119413_emna.resx">
+      <DependentUpon>201911091119413_emna.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

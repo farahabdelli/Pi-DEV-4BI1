@@ -9,16 +9,19 @@
     <title>Operators</title>
     <!-- Custom fonts for this template-->
     
-    <link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    
     <!-- Custom styles for this template-->
     <!-- Styles -->
+    <script src="https://kit.fontawesome.com/yourcode.js"></script> 
     @Styles.Render("~/template/Backend/css")
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" />
+
 </head>
 
 <body id="page-top">
+    
     <!-- Page Wrapper -->
     <div id="wrapper">
         <!-- Sidebar -->
@@ -26,7 +29,7 @@
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
                 <div class="sidebar-brand-icon rotate-n-15">
-                    <i class="fas fa-laugh-wink"></i>
+                    <i class="fa fa-phone"></i>
                 </div>
                 <div class="sidebar-brand-text mx-3" >Operators administration</div>
             </a>
@@ -34,23 +37,22 @@
             <!-- Divider -->
             <hr class="sidebar-divider my-0">
             <!-- Nav Item - Dashboard -->
+            
+          
+            <!-- Nav Item - Pages Collapse Menu -->
+
             <li class="nav-item">
-                <a class="nav-link" href="index.html">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Dashboard</span>
+                <a href=" @Url.Action("ProductList", "Produit")" class="nav-link collapsed">
+
+                    <i class="fa fa-user"></i>
+                    <span>Users</span>
                 </a>
             </li>
-            <!-- Divider -->
-            <hr class="sidebar-divider">
-            <!-- Heading -->
-            <div class="sidebar-heading">
-                Interface
-            </div>
-            <!-- Nav Item - Pages Collapse Menu -->
 
                 <li class="nav-item">
             <a href=" @Url.Action("ProductList", "Produit")" class="nav-link collapsed" >
-                <i class="fas fa-list"></i>
+                
+                <i class="fa fa-list-ul"></i>
                     <span>Products</span></a></li>
                
             
@@ -58,37 +60,37 @@
             <!-- Nav Item - Utilities Collapse Menu -->
             <li class="nav-item">
                 <a href=" @Url.Action("Index", "Stores")" class="nav-link collapsed">
-                    <i class="fa fa-calculator"></i>
+                    <i class="fa fa-home" ></i>
                     <span>Stores</span>
                 </a>
             </li>
             <li class="nav-item">
                 <a href=" @Url.Action()" class="nav-link collapsed">
-                    <i class="fas fa-fw fa-cog"></i>
+                    <i class="fa fa-truck fa-2x" ></i>
                     <span>Commands</span>
                 </a>
             </li>
             <li class="nav-item">
-                <a href=" @Url.Action()" class="nav-link collapsed">
-                    <i class="fas fa-fw fa-cog"></i>
+                <a href="  @Url.Action("Index", "Promotions")" class="nav-link collapsed">
+                    <i class="fas fa-percent"></i>
                     <span>Promotions</span>
                 </a>
             </li>
             <li class="nav-item">
-                <a href=" @Url.Action()" class="nav-link collapsed">
+                <a href="  @Url.Action("Index", "Offers")" class="nav-link collapsed">
                     <i class="fas fa-fw fa-cog"></i>
                     <span>Offers</span>
                 </a>
             </li>
             <li class="nav-item">
-                <a href=" @Url.Action()" class="nav-link collapsed">
-                    <i class="fas fa-fw fa-cog"></i>
+                <a href=" @Url.Action("Index", "Packs")" class="nav-link collapsed">
+                    <i class="fa fa-cube"></i>
                     <span>Packs</span>
                 </a>
             </li>
             <li class="nav-item">
                 <a href=" @Url.Action()" class="nav-link collapsed">
-                    <i class="fas fa-fw fa-cog"></i>
+                    <i class="fa fa-headphones"></i>
                     <span>Claims</span>
                 </a>
             </li>
@@ -99,46 +101,16 @@
             <!-- Divider -->
             <hr class="sidebar-divider">
             <!-- Heading -->
-            <div class="sidebar-heading">
-                Statistics
-            </div>
-            <!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item active">
-                <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
-                    <i class="fas fa-fw fa-folder"></i>
-                    <span>Products</span>
-                </a>
-                <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
-                    <i class="fas fa-fw fa-folder"></i>
-                    <span>Stores</span>
-                </a>
-                <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
-                    <i class="fas fa-fw fa-folder"></i>
-                    <span>Commands</span>
-                </a>
-                <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
-                    <i class="fas fa-fw fa-folder"></i>
-                    <span>Promotions</span>
-                </a>
-                <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
-                    <i class="fas fa-fw fa-folder"></i>
-                    <span>Offers</span>
-                </a>
-                <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
-                    <i class="fas fa-fw fa-folder"></i>
-                    <span>Claims</span>
-                </a>
-              
-            </li>
+          
             <!-- Nav Item - Charts -->
          
             <!-- Nav Item - Tables -->
         
             <!-- Divider -->
-            <hr class="sidebar-divider d-none d-md-block">
+           
             <!-- Sidebar Toggler (Sidebar) -->
             <div class="text-center d-none d-md-inline">
-                <button class="rounded-circle border-0" id="sidebarToggle"></button>
+                <button class="rounded-circle border-0 fa fa-arrows-alt" id="sidebarToggle"></button>
             </div>
         </ul>
         <!-- End of Sidebar -->
@@ -150,7 +122,7 @@
                 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
                     <!-- Sidebar Toggle (Topbar) -->
                     <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-                        <i class="fa fa-bars"></i>
+                        <i class="fa arrow-circle-right"></i>
                     </button>
                     <!-- Topbar Search -->
                   
@@ -226,7 +198,7 @@
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Your Website 2019</span>
+                        <span>Opertors 2019</span>
                     </div>
                 </div>
             </footer>
@@ -237,7 +209,7 @@
     <!-- End of Page Wrapper -->
     <!-- Scroll to Top Button-->
     <a class="scroll-to-top rounded" href="#page-top">
-        <i class="fas fa-angle-up"></i>
+        <i class="fa fa-arrow-up"></i>
     </a>
     <!-- Logout Modal-->
     <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -259,5 +231,6 @@
     </div>
     <!-- Bootstrap core JavaScript-->
     @Scripts.Render("~/template/Backend/js")
+
 </body>
 </html>

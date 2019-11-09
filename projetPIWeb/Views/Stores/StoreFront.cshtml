@@ -1,0 +1,112 @@
+﻿
+@using PagedList;
+@using PagedList.Mvc;
+@model IPagedList<Domaine.Store>
+
+@{
+    ViewBag.Title = "StoreFront";
+    Layout = "~/Views/Shared/_CustomLayoutFrontend.cshtml";
+}
+<br />
+<h2>List of stores</h2>
+
+<br />
+@using (Html.BeginForm())
+{
+    <div>
+        <center><div><!-- Serach  : Html.TextBox("SearchString")--> <input type="text" placeholder="Search" id="txt" /> </div></center>
+
+    </div>
+}
+<br />
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.First().Nom)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().Ville)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().Adresse)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().tel)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().type)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().heure_ouv)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().heure_ferm)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nom)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ville)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Adresse)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.tel)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.type)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.heure_ouv)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.heure_ferm)
+            </td>
+          
+        </tr>
+    }
+
+</table>
+<center>@Html.PagedListPager(Model, Page => Url.Action("Index", new { Page }))</center>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+    $("#txt").on("keyup", function () {
+        var txtenter = $(this).val();
+        $("table tr").each(function(results){
+            if (results!==0)
+            {
+                var id = $(this).find("td:nth-child(1)").text();
+                var id2 = $(this).find("td:nth-child(2)").text();
+                var id3 = $(this).find("td:nth-child(6)").text();
+                if ((id.indexOf(txtenter) !== 0 && id.toLowerCase().indexOf(txtenter.toLowerCase())<0) &
+                    (id2.indexOf(txtenter) !== 0 && id2.toLowerCase().indexOf(txtenter.toLowerCase())<0) &
+                    (id3.indexOf(txtenter) !== 0 && id3.toLowerCase().indexOf(txtenter.toLowerCase())<0))
+                {
+                    $(this).hide();
+
+                }
+                else
+                {
+                    $(this).show();
+                }
+
+
+
+
+            }
+        })
+    })
+</script>

@@ -177,6 +177,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CommandeLigneController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\OffersController.cs" />
@@ -416,7 +417,9 @@
     <Content Include="Scripts\slick.min.js" />
     <Content Include="Scripts\sweetalert.min.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -505,6 +508,9 @@
     <Content Include="Views\Promotions\Details.cshtml" />
     <Content Include="Views\Promotions\Edit.cshtml" />
     <Content Include="Views\Promotions\Index.cshtml" />
+    <Content Include="Views\CommandeLigne\Index.cshtml" />
+    <Content Include="Views\CommandeLigne\Create.cshtml" />
+    <Content Include="Views\CommandeLigne\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

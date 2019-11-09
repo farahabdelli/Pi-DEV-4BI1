@@ -65,6 +65,7 @@
     <Compile Include="Migrations\201911091120014_emna.cs" />
     <Compile Include="Migrations\201911091120014_emna.Designer.cs">
       <DependentUpon>201911091120014_emna.cs</DependentUpon>
+
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="projetPIContext.cs" />
